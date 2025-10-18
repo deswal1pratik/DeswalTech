@@ -7,7 +7,7 @@ This guide explains how to publish DeswalTech to GitHub and npm for easy distrib
 ## Prerequisites
 
 1. **GitHub Account**
-   - Repository: https://github.com/pratikdeswal/deswaltech
+   - Repository: https://github.com/deswal1pratik/DeswalTech
    - Access: Owner or Admin permissions
 
 2. **npm Account**
@@ -98,7 +98,7 @@ rm deswaltech-1.0.0.tgz
 git init
 
 # Add remote
-git remote add origin https://github.com/pratikdeswal/deswaltech.git
+git remote add origin https://github.com/deswal1pratik/DeswalTech.git
 
 # Check status
 git status
@@ -125,7 +125,7 @@ git push -u origin main
 
 ### 2.3 Create GitHub Release
 
-1. Go to https://github.com/pratikdeswal/deswaltech/releases
+1. Go to https://github.com/deswal1pratik/DeswalTech/releases
 2. Click "Create a new release"
 3. Tag version: `v1.0.0`
 4. Release title: `DeswalTech v1.0.0 - NPX Installation & AI Agent Experience`
@@ -149,9 +149,9 @@ git push -u origin main
    ```
    
    ### Documentation
-   - [README.md](https://github.com/pratikdeswal/deswaltech#readme)
-   - [AI Agent Guide](https://github.com/pratikdeswal/deswaltech/blob/main/AI_AGENT_GUIDE.md)
-   - [Complete Guide](https://github.com/pratikdeswal/deswaltech/blob/main/DESWALTECH_COMPLETE_GUIDE.md)
+   - [README.md](https://github.com/deswal1pratik/DeswalTech#readme)
+   - [AI Agent Guide](https://github.com/deswal1pratik/DeswalTech/blob/main/AI_AGENT_GUIDE.md)
+   - [Complete Guide](https://github.com/deswal1pratik/DeswalTech/blob/main/DESWALTECH_COMPLETE_GUIDE.md)
    
    ### Breaking Changes
    None - fully backwards compatible
@@ -394,9 +394,9 @@ npx create-deswaltech-app test-project
 ## Support
 
 If you encounter issues:
-- GitHub Issues: https://github.com/pratikdeswal/deswaltech/issues
+- GitHub Issues: https://github.com/deswal1pratik/DeswalTech/issues
 - npm support: https://www.npmjs.com/support
-- Documentation: https://github.com/pratikdeswal/deswaltech#readme
+- Documentation: https://github.com/deswal1pratik/DeswalTech#readme
 
 ---
 

@@ -100,7 +100,7 @@ async function init() {
     
     // Try to clone from GitHub, fallback to npm install
     try {
-      execSync('git clone --depth 1 https://github.com/pratikdeswal/deswaltech.git /tmp/deswaltech-temp', { 
+      execSync('git clone --depth 1 https://github.com/deswal1pratik/DeswalTech.git /tmp/deswaltech-temp', { 
         stdio: 'pipe' 
       });
       
@@ -508,12 +508,12 @@ railway up
 ## 📞 Support
 
 - 📚 Documentation: \`AI_AGENT_GUIDE.md\`
-- 🐛 Issues: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/pratikdeswal/deswaltech/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/deswal1pratik/DeswalTech/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/deswal1pratik/DeswalTech/discussions)
 
 ---
 
-Built with ❤️ using [DeswalTech](https://github.com/pratikdeswal/deswaltech)
+Built with ❤️ using [DeswalTech](https://github.com/deswal1pratik/DeswalTech)
 `;
 
     await fs.writeFile(path.join(projectDir, 'README.md'), readme);

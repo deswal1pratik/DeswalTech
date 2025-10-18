@@ -100,7 +100,7 @@ npm install
 
 ### Method 2: GitHub (Available Now)
 ```bash
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 cd deswaltech
 npm install -g .
 create-deswaltech-app my-project
@@ -175,13 +175,13 @@ git commit -m "chore: Prepare DeswalTech for distribution"
 git push origin main
 
 # 3. Create GitHub release
-# Go to: https://github.com/pratikdeswal/deswaltech/releases
+# Go to: https://github.com/deswal1pratik/DeswalTech/releases
 # Click "Create a new release"
 # Tag: v1.0.0
 # Title: "DeswalTech v1.0.0 - Production Ready Starter Pack"
 
 # 4. Users can install:
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 # or
 npm install github:pratikdeswal/deswaltech
 ```
@@ -289,9 +289,9 @@ See:
 
 ## 📞 Support Resources
 
-- **GitHub**: https://github.com/pratikdeswal/deswaltech
-- **Issues**: https://github.com/pratikdeswal/deswaltech/issues
-- **Discussions**: https://github.com/pratikdeswal/deswaltech/discussions
+- **GitHub**: https://github.com/deswal1pratik/DeswalTech
+- **Issues**: https://github.com/deswal1pratik/DeswalTech/issues
+- **Discussions**: https://github.com/deswal1pratik/DeswalTech/discussions
 - **npm**: https://www.npmjs.com/package/deswaltech (after publish)
 
 ---

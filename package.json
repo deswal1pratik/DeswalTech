@@ -121,12 +121,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pratikdeswal/deswaltech.git"
+    "url": "https://github.com/deswal1pratik/DeswalTech.git"
   },
   "bugs": {
-    "url": "https://github.com/pratikdeswal/deswaltech/issues"
+    "url": "https://github.com/deswal1pratik/DeswalTech/issues"
   },
-  "homepage": "https://github.com/pratikdeswal/deswaltech#readme",
+  "homepage": "https://github.com/deswal1pratik/DeswalTech#readme",
   "files": [
     "bin/",
     "agents/",

@@ -38,7 +38,7 @@ DeswalTech is an **AI-powered development powerhouse** that enables anyone—esp
 #### From GitHub (Available Now):
 ```bash
 # Clone and install globally
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 cd deswaltech
 npm install -g .
 
@@ -510,7 +510,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Development Setup
 ```bash
 # Clone repository
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 cd deswaltech
 
 # Install dependencies
@@ -545,7 +545,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📧 Email: support@deswaltech.com
 - 💬 Discord: [DeswalTech Community](https://discord.gg/deswaltech)
 - 📚 Documentation: [docs.deswaltech.com](https://docs.deswaltech.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/deswal1pratik/DeswalTech/issues)
 
 ---
 

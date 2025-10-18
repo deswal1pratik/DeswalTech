@@ -141,7 +141,7 @@ DeswalTech/ (ROOT - CLEAN & ORGANIZED)
 ### Method 1: From GitHub (Available NOW)
 ```bash
 # Clone and install globally
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 cd deswaltech
 npm install -g .
 
@@ -195,7 +195,7 @@ npm install
 ### For Developers:
 ```bash
 # Install DeswalTech
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 cd deswaltech
 npm install -g .
 
@@ -303,7 +303,7 @@ git push origin main
 ```
 
 ### Step 3: Create GitHub Release
-1. Go to: https://github.com/pratikdeswal/deswaltech/releases
+1. Go to: https://github.com/deswal1pratik/DeswalTech/releases
 2. Click "Create a new release"
 3. Tag: `v1.0.0`
 4. Title: "DeswalTech v1.0.0 - Production Ready Starter Pack"
@@ -355,9 +355,9 @@ See **PUBLISHING.md** for complete instructions.
 
 ## 📞 Support & Resources
 
-- **GitHub**: https://github.com/pratikdeswal/deswaltech
-- **Issues**: https://github.com/pratikdeswal/deswaltech/issues
-- **Discussions**: https://github.com/pratikdeswal/deswaltech/discussions
+- **GitHub**: https://github.com/deswal1pratik/DeswalTech
+- **Issues**: https://github.com/deswal1pratik/DeswalTech/issues
+- **Discussions**: https://github.com/deswal1pratik/DeswalTech/discussions
 - **npm**: https://www.npmjs.com/package/deswaltech (after publish)
 - **Documentation**: See docs/ folder and README.md
 

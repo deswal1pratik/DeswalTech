@@ -73,10 +73,10 @@ docs/
 
 ## 🔗 External Links
 
-- **GitHub Repository**: https://github.com/pratikdeswal/deswaltech
+- **GitHub Repository**: https://github.com/deswal1pratik/DeswalTech
 - **npm Package**: https://www.npmjs.com/package/deswaltech
-- **Issues**: https://github.com/pratikdeswal/deswaltech/issues
-- **Discussions**: https://github.com/pratikdeswal/deswaltech/discussions
+- **Issues**: https://github.com/deswal1pratik/DeswalTech/issues
+- **Discussions**: https://github.com/deswal1pratik/DeswalTech/discussions
 
 ---
 
@@ -98,7 +98,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
 - **Setup Issues**: See [DESWALTECH_SETUP_GUIDE.md](DESWALTECH_SETUP_GUIDE.md)
 - **Architecture Questions**: See [DESWALTECH_ARCHITECTURE.md](DESWALTECH_ARCHITECTURE.md)
 - **Deployment Issues**: See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-- **Bug Reports**: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
+- **Bug Reports**: [GitHub Issues](https://github.com/deswal1pratik/DeswalTech/issues)
 
 ---
 

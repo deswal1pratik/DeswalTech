@@ -43,7 +43,7 @@ git clone https://github.com/YOUR_USERNAME/deswaltech.git
 cd deswaltech
 
 # Add upstream remote
-git remote add upstream https://github.com/pratikdeswal/deswaltech.git
+git remote add upstream https://github.com/deswal1pratik/DeswalTech.git
 ```
 
 ### Install Dependencies
@@ -473,9 +473,9 @@ Active contributors may be invited to become maintainers based on:
 
 ### Resources
 
-- **Documentation**: [GitHub README](https://github.com/pratikdeswal/deswaltech#readme)
-- **Discussions**: [GitHub Discussions](https://github.com/pratikdeswal/deswaltech/discussions)
-- **Issues**: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
+- **Documentation**: [GitHub README](https://github.com/deswal1pratik/DeswalTech#readme)
+- **Discussions**: [GitHub Discussions](https://github.com/deswal1pratik/DeswalTech/discussions)
+- **Issues**: [GitHub Issues](https://github.com/deswal1pratik/DeswalTech/issues)
 
 ### Questions?
 

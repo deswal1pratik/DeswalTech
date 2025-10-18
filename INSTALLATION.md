@@ -24,7 +24,7 @@ npm install
 
 ```bash
 # Clone the repository
-git clone https://github.com/pratikdeswal/deswaltech.git
+git clone https://github.com/deswal1pratik/DeswalTech.git
 
 # Navigate to your project
 cd my-new-project
@@ -375,9 +375,9 @@ npm uninstall deswaltech
 
 ## Support
 
-- **Documentation**: [GitHub README](https://github.com/pratikdeswal/deswaltech#readme)
-- **Issues**: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/pratikdeswal/deswaltech/discussions)
+- **Documentation**: [GitHub README](https://github.com/deswal1pratik/DeswalTech#readme)
+- **Issues**: [GitHub Issues](https://github.com/deswal1pratik/DeswalTech/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/deswal1pratik/DeswalTech/discussions)
 - **AI Agent Guide**: `AI_AGENT_GUIDE.md` in your project
 
 ---

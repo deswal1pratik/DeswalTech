@@ -33,30 +33,56 @@ DeswalTech is an **AI-powered development powerhouse** that enables anyone—esp
 
 ## 🚀 Quick Start
 
-### Install DeswalTech Globally
+### Install DeswalTech (One Command)
+
+#### From GitHub (Available Now):
 ```bash
-npm install -g deswaltech
+# Clone and install globally
+git clone https://github.com/pratikdeswal/deswaltech.git
+cd deswaltech
+npm install -g .
+
+# Create new project
+create-deswaltech-app my-project
+
+# Or add to existing project
+cd my-existing-project
+create-deswaltech-app .
 ```
 
-### Create a New Project
+#### From npm (After Publishing):
 ```bash
-# Create project directory
-mkdir my-awesome-project
-cd my-awesome-project
+# Create new project
+npx create-deswaltech-app my-awesome-project
 
-# Install DeswalTech in the project
-deswaltech install
+# Or add to existing project
+cd my-existing-project
+npx create-deswaltech-app .
 ```
 
-### Activate DeswalTech Powerhouse
+### Start Building with AI
 ```bash
+cd my-project
+npm install
+
+# Open in Cursor and tell Claude:
+"Take the Orchestrator role from .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md 
+and build [your feature] using the specialist agents"
+```
+
+### Traditional Development
+```bash
+# Start infrastructure services
 npm run deswaltech:powerhouse
+
+# Start development server
+npm run dev
+
+# Run verification
+npm run verify
 ```
 
-### Ask AI Team to Build Features
-```bash
-npm run deswaltech:ask "Build me a complete e-commerce platform with React frontend, Node.js backend, PostgreSQL database, Stripe payments, and mobile app"
-```
+**📖 Complete Installation Guide**: See [INSTALLATION.md](INSTALLATION.md)
 
 ---
 
@@ -96,47 +122,49 @@ npm run deswaltech:ask "Build me a complete e-commerce platform with React front
 
 ## 📚 Documentation
 
-### Complete Documentation Set
+### Quick Access
 | File | Purpose |
 |------|---------|
-| **`DESWALTECH_COMPLETE_GUIDE.md`** | Complete comprehensive guide |
-| **`DESWALTECH_QUICK_REFERENCE.md`** | Quick reference (5 minutes) |
-| **`DESWALTECH_ARCHITECTURE.md`** | Technical architecture deep dive |
-| **`DESWALTECH_SETUP_GUIDE.md`** | Complete setup instructions |
-| **`DESWALTECH_WORKFLOWS.md`** | Workflows and usage patterns |
+| **[INSTALLATION.md](INSTALLATION.md)** | 📦 Complete installation guide |
+| **[AI_AGENT_GUIDE.md](AI_AGENT_GUIDE.md)** | 🤖 Guide for AI agents (Claude, GPT, etc.) |
+| **[ORCHESTRATOR_INSTRUCTIONS.md](ORCHESTRATOR_INSTRUCTIONS.md)** | 🎯 Orchestration process |
+| **[CONTRIBUTING.md](CONTRIBUTING.md)** | 🤝 Contributing guidelines |
+| **[PUBLISHING.md](PUBLISHING.md)** | 📤 Publishing to GitHub/npm |
+| **[DISTRIBUTION_READY.md](DISTRIBUTION_READY.md)** | ✅ Distribution summary |
 
-### Essential Guides
+### Detailed Documentation
+All comprehensive guides are in the **[docs/](docs/)** folder:
+
 | File | Purpose |
 |------|---------|
-| **`START_HERE_REAL_GUIDE.md`** | Quick 2-minute overview |
-| **`ORCHESTRATOR_INSTRUCTIONS.md`** | How to orchestrate |
-| **`DEPLOYMENT_GUIDE.md`** | Railway + Docker deployment |
-| **`ENHANCED_FEATURES.md`** | Complete feature overview |
+| **[docs/README.md](docs/README.md)** | 📚 Documentation hub & navigation |
+| **[docs/START_HERE_REAL_GUIDE.md](docs/START_HERE_REAL_GUIDE.md)** | Quick 2-minute overview |
+| **[docs/DESWALTECH_QUICK_REFERENCE.md](docs/DESWALTECH_QUICK_REFERENCE.md)** | Quick reference (5 minutes) |
+| **[docs/DESWALTECH_COMPLETE_GUIDE.md](docs/DESWALTECH_COMPLETE_GUIDE.md)** | Complete comprehensive guide |
+| **[docs/DESWALTECH_ARCHITECTURE.md](docs/DESWALTECH_ARCHITECTURE.md)** | Technical architecture |
+| **[docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)** | Railway + Docker deployment |
+| **[docs/ENHANCED_FEATURES.md](docs/ENHANCED_FEATURES.md)** | Complete feature overview |
 
-### Technical Documentation
+### Specialist Agents
+Located in **[agents/](agents/)** folder:
+
+| Agent | Domain |
+|-------|--------|
+| **[ai-expert-orchestrator.md](agents/ai-expert-orchestrator.md)** | 🎯 Orchestration & coordination |
+| **[backend-expert-agent.md](agents/backend-expert-agent.md)** | 🔧 APIs, databases, server logic |
+| **[frontend-expert-agent.md](agents/frontend-expert-agent.md)** | 🎨 Web UI, components, UX |
+| **[mobile-expert-agent.md](agents/mobile-expert-agent.md)** | 📱 iOS/Android apps |
+| **[devops-expert-agent.md](agents/devops-expert-agent.md)** | 🚀 Deployment, infrastructure |
+| **[qa-expert-agent.md](agents/qa-expert-agent.md)** | ✅ Testing, quality assurance |
+| **[security-expert-agent.md](agents/security-expert-agent.md)** | 🔒 Security, auth, encryption |
+| **[business-expert-agent.md](agents/business-expert-agent.md)** | 💼 Requirements, ROI, validation |
+
+### Configuration Files
 | File | Purpose |
 |------|---------|
-| **`ARCHITECTURE_CORRECTED.md`** | System architecture |
-| **`STRUCTURE_OPTIMIZED.md`** | Project structure |
-
-### Specialist Roles
-| File | Domain |
-|------|--------|
-| **`agents/ai-expert-orchestrator.md`** | Orchestration |
-| **`agents/backend-expert-agent.md`** | APIs & Databases |
-| **`agents/frontend-expert-agent.md`** | Web UI |
-| **`agents/mobile-expert-agent.md`** | iOS/Android |
-| **`agents/devops-expert-agent.md`** | Deployment |
-| **`agents/qa-expert-agent.md`** | Testing |
-| **`agents/security-expert-agent.md`** | Security |
-| **`agents/business-expert-agent.md`** | Requirements & ROI |
-
-### Configuration
-| File | Purpose |
-|------|---------|
-| **`mcp.json`** | MCPs configuration (Supabase, shadcn, Ref, Exa) |
-| **`railway.json`** | Railway deployment configuration |
-| **`Infrastructure/docker-compose.yml`** | Local development services |
+| **[mcp.json](mcp.json)** | MCP integrations (Supabase, shadcn, Stripe, etc.) |
+| **[railway.json](railway.json)** | Railway deployment configuration |
+| **[Infrastructure/](Infrastructure/)** | Docker Compose & local development services |
 
 ---
 
@@ -215,20 +243,27 @@ npm run deswaltech:ask "Build me a mobile app with:
 
 ## 🛠️ Available Commands
 
-### DeswalTech Commands
-- `deswaltech install` - Install DeswalTech in current project
-- `npm run deswaltech:powerhouse` - Activate DeswalTech at 100% capacity
-- `npm run deswaltech:ask "request"` - Ask AI team to build something
-- `npm run deswaltech:delegate` - Delegate tasks to specific agents
-- `npm run deswaltech:status` - Check system status
-- `npm run deswaltech:tasks` - View assigned tasks
-- `npm run deswaltech:dashboard` - Open monitoring dashboard
+### Project Initialization
+- `npx create-deswaltech-app <project-name>` - Create new project with DeswalTech
+- `npx create-deswaltech-app .` - Add DeswalTech to existing project
 
-### Development Commands
+### DeswalTech Commands (in your project)
+- `npm run deswaltech:init` - Complete DeswalTech setup (first time)
+- `npm run deswaltech:powerhouse` - Start all services (Docker Compose)
+- `npm run deswaltech:status` - Check system status
+
+### Development Commands (in your project)
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run test` - Run tests
 - `npm run lint` - Lint code
+
+### Using with AI
+Open in Cursor and tell Claude:
+```
+"Take the Orchestrator role from .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md 
+and build [your feature]"
+```
 
 ---
 
@@ -313,32 +348,63 @@ npm run deswaltech:ask "Build me a mobile app with:
 ### Prerequisites
 - Node.js 18+ 
 - npm 9+
-- Docker & Docker Compose
-- Cursor IDE (recommended)
+- Docker & Docker Compose (optional, for local infrastructure)
+- Cursor IDE (recommended for AI-powered development)
 
 ### Installation
+
+#### New Project
 ```bash
-# Install globally
-npm install -g deswaltech
-
-# Create new project
-mkdir my-project
+# Create a new project with DeswalTech pre-configured
+npx create-deswaltech-app my-project
 cd my-project
+npm install
 
-# Install DeswalTech
-deswaltech install
-
-# Activate powerhouse
-npm run deswaltech:powerhouse
+# Read the guides
+cat AI_AGENT_GUIDE.md  # For AI agents (Claude)
+cat .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md  # Orchestration process
 ```
 
-### First Project
+#### Existing Project
 ```bash
-# Ask AI team to build something
-npm run deswaltech:ask "Build me a simple todo app with React frontend, Node.js backend, and PostgreSQL database"
+# Navigate to your project
+cd my-existing-project
 
-# Watch Claude orchestrate the team
-# Receive production-ready code
+# Initialize DeswalTech
+npx create-deswaltech-app .
+npm install
+```
+
+### First Feature with AI
+
+Open your project in Cursor and tell Claude:
+
+```
+Take the Orchestrator role from .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md
+
+Build a complete user authentication system with:
+- Email/password login
+- OAuth integration (Google, GitHub)
+- Password reset functionality
+- JWT tokens
+- >80% test coverage
+
+Use the specialist agents from .deswaltech/agents/ and MCPs for acceleration.
+```
+
+Claude will orchestrate the entire development process automatically.
+
+### Traditional Development
+
+```bash
+# Start infrastructure (PostgreSQL, Redis, etc.)
+npm run deswaltech:powerhouse
+
+# Check status
+npm run deswaltech:status
+
+# Start development
+npm run dev
 ```
 
 ---

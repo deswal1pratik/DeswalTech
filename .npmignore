@@ -1,0 +1,86 @@
+# Development files
+*.ts
+!*.d.ts
+tsconfig.json
+.eslintrc.js
+.eslintignore
+.prettierrc
+.prettierignore
+
+# Tests
+**/__tests__/**
+**/*.test.js
+**/*.test.ts
+**/*.spec.js
+**/*.spec.ts
+coverage/
+
+# Documentation (keep essential docs only)
+docs/
+*.draft.md
+
+# Git
+.git/
+.github/
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+node_modules/
+dist/
+build/
+.cache/
+.temp/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.test
+*.env
+
+# MCP Server build
+mcp-server/dist/
+mcp-server/node_modules/
+mcp-server/.env
+mcp-server/**/*.log
+
+# Infrastructure runtime
+Infrastructure/**/*.log
+Infrastructure/**/data/
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# Lock files (keep package-lock.json in source)
+# But exclude it from npm package
+# package-lock.json
+
+# CI/CD
+.circleci/
+.travis.yml
+.gitlab-ci.yml
+
+# Misc
+.dockerignore
+docker-compose.override.yml
+

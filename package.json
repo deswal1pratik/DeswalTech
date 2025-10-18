@@ -4,7 +4,8 @@
   "description": "AI-Powered Development Powerhouse - Build production-ready projects with Claude AI orchestration",
   "main": "dist/index.js",
   "bin": {
-    "deswaltech": "./bin/deswaltech"
+    "deswaltech": "./bin/deswaltech",
+    "create-deswaltech-app": "./bin/create-deswaltech-app"
   },
   "scripts": {
     "build": "tsc",
@@ -19,7 +20,9 @@
     "postbuild": "cp package.json dist/",
     "install-project": "node scripts/install-project.js",
     "setup": "node scripts/setup.js",
-    "powerhouse": "node scripts/powerhouse.js"
+    "powerhouse": "node scripts/powerhouse.js",
+    "verify": "node scripts/verify-package.js",
+    "prepublishOnly": "node scripts/verify-package.js"
   },
   "keywords": [
     "ai-orchestration",
@@ -27,11 +30,15 @@
     "development-platform",
     "full-stack",
     "production-ready",
-    "non-tech-founders",
+    "project-starter",
     "mcp-integration",
     "specialist-agents",
     "quality-gates",
-    "unicorn-projects"
+    "ai-powered",
+    "cursor-ai",
+    "starter-kit",
+    "boilerplate",
+    "scaffolding"
   ],
   "author": "DeswalTech",
   "license": "MIT",
@@ -121,15 +128,22 @@
   },
   "homepage": "https://github.com/pratikdeswal/deswaltech#readme",
   "files": [
-    "dist/",
     "bin/",
     "agents/",
     "Infrastructure/",
+    "mcp-server/",
     "Templates/",
     "Tools/",
     "scripts/",
     "docs/",
-    "*.md",
-    "*.json"
+    "AI_AGENT_GUIDE.md",
+    "ORCHESTRATOR_INSTRUCTIONS.md",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "PUBLISHING.md",
+    "mcp.json",
+    "railway.json",
+    ".npmignore"
   ]
 }

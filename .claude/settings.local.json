@@ -10,7 +10,9 @@
       "Bash(claude update)",
       "WebSearch",
       "Read(//Users/pratikdeswal/.claude/**)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(npm run verify)",
+      "Bash(git add -A)"
     ],
     "deny": [],
     "ask": []

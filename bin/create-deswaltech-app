@@ -1,0 +1,626 @@
+#!/usr/bin/env node
+
+/**
+ * DeswalTech Project Initializer
+ * 
+ * Usage:
+ *   npx create-deswaltech-app my-project
+ *   npx create-deswaltech-app .
+ */
+
+const fs = require('fs-extra');
+const path = require('path');
+const { execSync } = require('child_process');
+
+// Colors for terminal output
+const colors = {
+  reset: '\x1b[0m',
+  bright: '\x1b[1m',
+  cyan: '\x1b[36m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  red: '\x1b[31m',
+  blue: '\x1b[34m',
+};
+
+function log(message, color = 'reset') {
+  console.log(`${colors[color]}${message}${colors.reset}`);
+}
+
+function banner() {
+  log('\n╔════════════════════════════════════════════════════════════════╗', 'cyan');
+  log('║                                                                ║', 'cyan');
+  log('║         🚀 DeswalTech - AI Powerhouse Initializer             ║', 'cyan');
+  log('║         Build Production-Ready Projects with AI               ║', 'cyan');
+  log('║                                                                ║', 'cyan');
+  log('╚════════════════════════════════════════════════════════════════╝\n', 'cyan');
+}
+
+function spinner(text) {
+  let frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+  let i = 0;
+  return setInterval(() => {
+    process.stdout.write(`\r${frames[i]} ${text}`);
+    i = (i + 1) % frames.length;
+  }, 80);
+}
+
+async function init() {
+  banner();
+
+  // Get project directory from args
+  const args = process.argv.slice(2);
+  let projectDir = args[0] || '.';
+  
+  // Resolve to absolute path
+  projectDir = path.resolve(projectDir);
+  const projectName = path.basename(projectDir);
+
+  log(`📁 Project directory: ${projectDir}`, 'blue');
+  log(`📦 Project name: ${projectName}\n`, 'blue');
+
+  try {
+    // Step 1: Create project directory
+    if (projectDir !== process.cwd()) {
+      log('Creating project directory...', 'yellow');
+      await fs.ensureDir(projectDir);
+      process.chdir(projectDir);
+      log('✅ Project directory created\n', 'green');
+    }
+
+    // Step 2: Initialize package.json if needed
+    const packageJsonPath = path.join(projectDir, 'package.json');
+    if (!await fs.pathExists(packageJsonPath)) {
+      log('Initializing package.json...', 'yellow');
+      const packageJson = {
+        name: projectName,
+        version: '1.0.0',
+        description: 'AI-powered application built with DeswalTech',
+        main: 'index.js',
+        scripts: {
+          "dev": "echo 'Development server not configured yet'",
+          "build": "echo 'Build script not configured yet'",
+          "test": "echo 'No tests yet'"
+        },
+        keywords: ['deswaltech', 'ai-powered'],
+        author: '',
+        license: 'MIT',
+        dependencies: {}
+      };
+      await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
+      log('✅ package.json created\n', 'green');
+    }
+
+    // Step 3: Clone DeswalTech (or use local copy)
+    log('📥 Installing DeswalTech...', 'yellow');
+    const spin = spinner('Installing DeswalTech...');
+    
+    const deswaltechDir = path.join(projectDir, '.deswaltech');
+    await fs.ensureDir(deswaltechDir);
+    
+    // Try to clone from GitHub, fallback to npm install
+    try {
+      execSync('git clone --depth 1 https://github.com/pratikdeswal/deswaltech.git /tmp/deswaltech-temp', { 
+        stdio: 'pipe' 
+      });
+      
+      // Copy necessary files
+      const filesToCopy = [
+        'agents',
+        'Infrastructure',
+        'mcp-server',
+        'Templates',
+        'Tools',
+        'scripts',
+        'ORCHESTRATOR_INSTRUCTIONS.md',
+        'DESWALTECH_COMPLETE_GUIDE.md',
+        'DESWALTECH_QUICK_REFERENCE.md',
+        'mcp.json',
+        'railway.json'
+      ];
+
+      for (const file of filesToCopy) {
+        const src = path.join('/tmp/deswaltech-temp', file);
+        const dest = path.join(deswaltechDir, file);
+        if (await fs.pathExists(src)) {
+          await fs.copy(src, dest);
+        }
+      }
+
+      // Cleanup
+      await fs.remove('/tmp/deswaltech-temp');
+      
+    } catch (error) {
+      // Fallback: create minimal structure
+      log('\n⚠️  Could not clone from GitHub, creating minimal setup...', 'yellow');
+      await fs.ensureDir(path.join(deswaltechDir, 'agents'));
+      await fs.ensureDir(path.join(deswaltechDir, 'scripts'));
+    }
+
+    clearInterval(spin);
+    process.stdout.write('\r');
+    log('✅ DeswalTech installed\n', 'green');
+
+    // Step 4: Create project structure
+    log('📁 Creating project structure...', 'yellow');
+    const directories = [
+      'src',
+      'src/backend',
+      'src/frontend',
+      'src/shared',
+      'tests',
+      'docs'
+    ];
+
+    for (const dir of directories) {
+      await fs.ensureDir(path.join(projectDir, dir));
+    }
+    log('✅ Project structure created\n', 'green');
+
+    // Step 5: Create .cursorules
+    log('⚙️  Creating .cursorules...', 'yellow');
+    const cursorules = `# 🎯 ${projectName} - DeswalTech AI-Powered Development
+
+## DeswalTech Integration
+This project uses DeswalTech for AI-powered development with Claude orchestration.
+
+## How to Use
+1. Read \`.deswaltech/ORCHESTRATOR_INSTRUCTIONS.md\` to understand the orchestration process
+2. Reference \`.deswaltech/agents/\` for specialist guidance
+3. Use MCPs (Supabase, shadcn, Stripe, etc.) for acceleration
+4. Enforce quality standards at every step
+
+## Quick Start for AI Agents
+To build features in this project:
+
+\`\`\`
+Take the Orchestrator role from .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md
+
+Reference the specialist agents from .deswaltech/agents/:
+- Backend Expert (APIs, Database)
+- Frontend Expert (UI, Components)
+- Mobile Expert (iOS/Android)
+- DevOps Expert (Deployment, Infrastructure)
+- QA Expert (Testing, Quality)
+- Security Expert (Auth, Security)
+- Business Expert (Requirements, ROI)
+
+Use MCPs from .deswaltech/mcp.json for acceleration.
+
+Build production-ready code with >80% test coverage.
+\`\`\`
+
+## Available Commands
+- \`npm run deswaltech:init\` - Complete DeswalTech setup
+- \`npm run deswaltech:powerhouse\` - Start all services
+- \`npm run dev\` - Development server
+- \`npm run build\` - Production build
+- \`npm test\` - Run tests
+
+## Architecture
+- **Orchestrator**: Claude AI coordinates everything
+- **Specialists**: 8 expert agents for different domains
+- **MCPs**: Pre-configured integrations (Supabase, shadcn, Stripe, etc.)
+- **Quality Gates**: 3-level quality enforcement
+- **Infrastructure**: Docker Compose + Railway deployment
+
+## Project Structure
+\`\`\`
+${projectName}/
+├── .deswaltech/              # DeswalTech configuration
+│   ├── agents/               # Specialist agent definitions
+│   ├── Infrastructure/       # Docker Compose setup
+│   ├── mcp-server/          # MCP orchestration server
+│   ├── Templates/           # Project templates
+│   └── ORCHESTRATOR_INSTRUCTIONS.md
+├── src/
+│   ├── backend/             # Backend code
+│   ├── frontend/            # Frontend code
+│   └── shared/              # Shared utilities
+├── tests/                   # Test files
+└── docs/                    # Documentation
+\`\`\`
+
+## Quality Standards
+- ✅ TypeScript with strict mode
+- ✅ >80% test coverage
+- ✅ Security best practices
+- ✅ Performance optimized
+- ✅ Complete documentation
+- ✅ Production-ready deployment
+
+## Ready to Build
+Ask Claude to take the Orchestrator role and build your features!
+`;
+
+    await fs.writeFile(path.join(projectDir, '.cursorules'), cursorules);
+    log('✅ .cursorules created\n', 'green');
+
+    // Step 6: Create AI_AGENT_GUIDE.md
+    log('📝 Creating AI Agent Guide...', 'yellow');
+    const aiGuide = `# 🤖 AI Agent Guide - How to Use DeswalTech
+
+## For AI Agents (Claude, GPT, etc.)
+
+This project uses DeswalTech - an AI-powered development powerhouse. Here's how to use it effectively:
+
+## Step 1: Understand Your Role
+Read \`.deswaltech/ORCHESTRATOR_INSTRUCTIONS.md\` to understand how to orchestrate the development process.
+
+## Step 2: Know Your Team
+You have access to 8 specialist agents in \`.deswaltech/agents/\`:
+
+1. **Backend Expert** - APIs, databases, server-side logic
+2. **Frontend Expert** - UI, components, user experience
+3. **Mobile Expert** - iOS/Android applications
+4. **DevOps Expert** - Deployment, infrastructure, scaling
+5. **QA Expert** - Testing, quality assurance
+6. **Security Expert** - Authentication, authorization, encryption
+7. **Business Expert** - Requirements, validation, ROI
+8. **AI Orchestrator** - Coordination, planning, quality gates
+
+## Step 3: Use MCPs for Acceleration
+MCPs are pre-configured in \`.deswaltech/mcp.json\`:
+
+- **Supabase** - Database + Auth + Real-time
+- **shadcn** - Component library
+- **Stripe** - Payment processing
+- **Ref** - Code patterns and references
+- **Exa** - AI-powered research
+- **BrowserMCP** - Web automation
+
+## Step 4: Follow Quality Standards
+Every feature must meet these standards:
+
+### Level 1: Code Quality
+- ✅ TypeScript with strict type checking
+- ✅ ESLint + Prettier formatted
+- ✅ No security vulnerabilities
+- ✅ Performance optimized (<100ms API responses)
+
+### Level 2: Testing
+- ✅ >80% code coverage
+- ✅ Unit tests for all functions
+- ✅ Integration tests for APIs
+- ✅ E2E tests for critical flows
+
+### Level 3: Production Ready
+- ✅ Complete documentation
+- ✅ Error handling
+- ✅ Logging and monitoring
+- ✅ Deployment configuration
+
+## Example: Building a Feature
+
+When asked to "Build a user authentication system", you should:
+
+\`\`\`markdown
+## Phase 1: Planning (Orchestrator)
+- Review requirements with Business Expert
+- Design architecture with Backend Expert
+- Plan UI with Frontend Expert
+- Consider security with Security Expert
+
+## Phase 2: Implementation
+- Backend Expert: Build auth API with JWT
+- Frontend Expert: Create login/signup UI
+- Security Expert: Implement password hashing, rate limiting
+- Use Supabase MCP for database and auth
+
+## Phase 3: Testing (QA Expert)
+- Write unit tests for auth logic
+- Integration tests for API endpoints
+- E2E tests for login flow
+- Security testing for vulnerabilities
+
+## Phase 4: Deployment (DevOps Expert)
+- Configure environment variables
+- Setup Railway deployment
+- Configure monitoring
+- Test production deployment
+
+## Phase 5: Quality Gate
+- Verify all tests pass (>80% coverage)
+- Security audit complete
+- Performance benchmarks met
+- Documentation complete
+\`\`\`
+
+## Infrastructure Setup
+
+The user can run these commands to setup infrastructure:
+
+\`\`\`bash
+# Complete setup (one-time)
+npm run deswaltech:init
+
+# Start all services
+npm run deswaltech:powerhouse
+
+# Check status
+npm run deswaltech:status
+\`\`\`
+
+## Your Workflow
+
+1. **Understand**: Read the user's request
+2. **Plan**: Reference ORCHESTRATOR_INSTRUCTIONS.md
+3. **Delegate**: Reference appropriate agent files
+4. **Implement**: Write production-ready code
+5. **Test**: Ensure quality standards
+6. **Document**: Complete documentation
+7. **Deploy**: Prepare for production
+
+## Important Notes
+
+- Always reference agent files for best practices
+- Use MCPs to accelerate development
+- Never skip quality standards
+- Write production-ready code only
+- Document everything clearly
+- Think like a senior engineering team
+
+## Getting Started
+
+When you receive a request, start with:
+
+\`\`\`
+I'll take the Orchestrator role and build this feature using DeswalTech's specialist agents.
+
+Let me start by planning the architecture...
+[Reference Backend Expert, Frontend Expert, etc. as needed]
+\`\`\`
+
+Then proceed to build with full quality standards.
+
+---
+
+**Remember**: You're not just writing code - you're orchestrating a world-class development team. Make every decision count.
+`;
+
+    await fs.writeFile(path.join(projectDir, 'AI_AGENT_GUIDE.md'), aiGuide);
+    log('✅ AI Agent Guide created\n', 'green');
+
+    // Step 7: Create README
+    log('📄 Creating README...', 'yellow');
+    const readme = `# ${projectName}
+
+AI-powered application built with DeswalTech
+
+## 🚀 Quick Start
+
+### For Developers
+
+\`\`\`bash
+# Install dependencies
+npm install
+
+# Setup DeswalTech (one-time)
+npm run deswaltech:init
+
+# Start development
+npm run dev
+\`\`\`
+
+### For AI Agents (Claude, etc.)
+
+Read \`AI_AGENT_GUIDE.md\` for complete instructions on how to build features in this project.
+
+**Quick version:**
+1. Read \`.deswaltech/ORCHESTRATOR_INSTRUCTIONS.md\`
+2. Reference specialist agents from \`.deswaltech/agents/\`
+3. Use MCPs from \`.deswaltech/mcp.json\`
+4. Build with quality standards (>80% test coverage)
+
+## 🎯 What is DeswalTech?
+
+DeswalTech is an AI-powered development powerhouse that enables building production-ready projects through Claude AI orchestration.
+
+### Key Features
+- 🤖 **AI Orchestration** - Claude coordinates specialist agents
+- 👥 **8 Specialist Agents** - Backend, Frontend, Mobile, DevOps, QA, Security, Business, Orchestrator
+- ⚡ **MCP Acceleration** - Pre-configured integrations (Supabase, shadcn, Stripe, etc.)
+- ✅ **Quality Gates** - 3-level quality enforcement
+- 🚀 **Production Ready** - Deploy to Railway with one command
+
+## 📚 Documentation
+
+- \`AI_AGENT_GUIDE.md\` - Complete guide for AI agents
+- \`.deswaltech/ORCHESTRATOR_INSTRUCTIONS.md\` - Orchestration process
+- \`.deswaltech/agents/\` - Specialist agent definitions
+- \`.deswaltech/DESWALTECH_COMPLETE_GUIDE.md\` - Complete DeswalTech documentation
+
+## 🛠️ Available Commands
+
+\`\`\`bash
+# DeswalTech Commands
+npm run deswaltech:init       # Complete setup (one-time)
+npm run deswaltech:powerhouse # Start all services
+npm run deswaltech:status     # Check system status
+
+# Development Commands
+npm run dev                   # Start development server
+npm run build                 # Build for production
+npm test                      # Run tests
+npm run lint                  # Lint code
+\`\`\`
+
+## 🏗️ Project Structure
+
+\`\`\`
+${projectName}/
+├── .deswaltech/              # DeswalTech configuration
+│   ├── agents/               # Specialist agents
+│   ├── Infrastructure/       # Docker setup
+│   ├── mcp-server/          # MCP server
+│   └── ORCHESTRATOR_INSTRUCTIONS.md
+├── src/
+│   ├── backend/             # Backend code
+│   ├── frontend/            # Frontend code
+│   └── shared/              # Shared code
+├── tests/                   # Test files
+├── docs/                    # Documentation
+├── AI_AGENT_GUIDE.md        # Guide for AI agents
+└── .cursorules              # Cursor AI rules
+\`\`\`
+
+## 📖 How to Use with AI
+
+### In Cursor
+Just tell Claude:
+\`\`\`
+Take the Orchestrator role from .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md
+and build [your feature] using the specialist agents.
+\`\`\`
+
+### Example
+\`\`\`
+Build a complete user authentication system with:
+- JWT-based auth
+- Email/password login
+- OAuth integration
+- Password reset
+- User profile management
+\`\`\`
+
+Claude will orchestrate the entire development process.
+
+## 🎯 Quality Standards
+
+Every feature must meet:
+- ✅ TypeScript with strict mode
+- ✅ >80% test coverage
+- ✅ Security best practices
+- ✅ Performance optimized
+- ✅ Complete documentation
+- ✅ Production-ready deployment
+
+## 🚀 Deployment
+
+\`\`\`bash
+# Deploy to Railway
+npm run deploy
+
+# Or use Railway CLI
+railway up
+\`\`\`
+
+## 📞 Support
+
+- 📚 Documentation: \`AI_AGENT_GUIDE.md\`
+- 🐛 Issues: [GitHub Issues](https://github.com/pratikdeswal/deswaltech/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/pratikdeswal/deswaltech/discussions)
+
+---
+
+Built with ❤️ using [DeswalTech](https://github.com/pratikdeswal/deswaltech)
+`;
+
+    await fs.writeFile(path.join(projectDir, 'README.md'), readme);
+    log('✅ README created\n', 'green');
+
+    // Step 8: Update package.json with DeswalTech scripts
+    log('⚙️  Updating package.json...', 'yellow');
+    const packageJson = await fs.readJson(packageJsonPath);
+    packageJson.scripts = {
+      ...packageJson.scripts,
+      'deswaltech:init': 'node .deswaltech/scripts/setup.js',
+      'deswaltech:powerhouse': 'node .deswaltech/scripts/powerhouse.js',
+      'deswaltech:status': 'node .deswaltech/scripts/status.js'
+    };
+    await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
+    log('✅ package.json updated\n', 'green');
+
+    // Step 9: Create .gitignore
+    log('📝 Creating .gitignore...', 'yellow');
+    const gitignore = `# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Testing
+coverage/
+*.lcov
+
+# Production
+build/
+dist/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.production
+.env*.local
+
+# DeswalTech
+.deswaltech/config.json
+.deswaltech/mcp-server/.env
+.deswaltech/mcp-server/dist/
+.deswaltech/mcp-server/node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.cache/
+.temp/
+`;
+
+    await fs.writeFile(path.join(projectDir, '.gitignore'), gitignore);
+    log('✅ .gitignore created\n', 'green');
+
+    // Final success message
+    log('═══════════════════════════════════════════════════════════════', 'cyan');
+    log('✅ DeswalTech project initialized successfully!', 'green');
+    log('═══════════════════════════════════════════════════════════════\n', 'cyan');
+
+    log('📚 Next Steps:', 'bright');
+    log('');
+    log('1. Navigate to your project:', 'yellow');
+    log(`   cd ${projectDir}`, 'white');
+    log('');
+    log('2. Install dependencies:', 'yellow');
+    log('   npm install', 'white');
+    log('');
+    log('3. Read the guides:', 'yellow');
+    log('   - AI_AGENT_GUIDE.md (for AI agents)', 'white');
+    log('   - .deswaltech/ORCHESTRATOR_INSTRUCTIONS.md (for orchestration)', 'white');
+    log('');
+    log('4. Start building with AI:', 'yellow');
+    log('   Open in Cursor and tell Claude:', 'white');
+    log('   "Take the Orchestrator role and build [your feature]"', 'white');
+    log('');
+    log('🚀 Happy building with DeswalTech!', 'green');
+    log('');
+
+  } catch (error) {
+    log(`\n❌ Error: ${error.message}`, 'red');
+    log('Stack trace:', 'red');
+    console.error(error);
+    process.exit(1);
+  }
+}
+
+// Run initialization
+init().catch(error => {
+  log(`\n❌ Fatal error: ${error.message}`, 'red');
+  process.exit(1);
+});
+

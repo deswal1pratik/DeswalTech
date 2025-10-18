@@ -1,0 +1,31 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Docker volumes (data persists in Docker, not in repo)
+postgres/data/
+redis/data/
+minio/data/
+prometheus/data/
+grafana/data/
+pgadmin/data/
+
+# Logs
+*.log
+logs/
+
+# Environment files (if any)
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+

@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "Figma": {
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase",
+        "--read-only",
+        "--project-ref=vtevoxxsslmjuuxbimzj"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sbp_a056626d50719c5c02d7adc3c78f35d905c2dfab"
+      }
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"]
+    },
+    "Ref": {
+      "type": "http",
+      "url": "https://api.ref.tools/mcp?apiKey=ref-fd7b4ceb643c30336f9b"
+    },
+    "Exa": {
+      "command": "npx",
+      "args": ["@exa/mcp-server"],
+      "env": {
+        "EXA_API_KEY": "YOUR_EXA_API_KEY_HERE"
+      }
+    }
+  }
+}

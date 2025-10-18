@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm update:*)",
+      "Bash(brew list:*)",
+      "Bash(claude --version)",
+      "Bash(curl -sSL https://install.claude.com)",
+      "Bash(bash)",
+      "Bash(npm install:*)",
+      "Bash(claude update)",
+      "WebSearch",
+      "Read(//Users/pratikdeswal/.claude/**)",
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

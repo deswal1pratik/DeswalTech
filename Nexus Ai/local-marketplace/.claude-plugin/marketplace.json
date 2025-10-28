@@ -1,0 +1,15 @@
+{
+  "name": "local-nexus-marketplace",
+  "description": "Local development marketplace for the Nexus AI Agent Team",
+  "owner": {
+    "name": "Pratik Deswal"
+  },
+  "plugins": [
+    {
+      "name": "nexus-ai-team",
+      "description": "An advanced, orchestrated team of AI subagents and skills for complex, synchronous software development.",
+      "version": "1.0.0",
+      "source": "../nexus-ai-team"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nexus-ai-team",
+  "version": "1.0.0",
+  "description": "An advanced, orchestrated team of AI subagents and skills for complex, synchronous software development.",
+  "author": {
+    "name": "Pratik Deswal"
+  },
+  "repository": "[https://github.com/your-repo/nexus-ai-team](https://github.com/your-repo/nexus-ai-team)",
+  "license": "Apache-2.0",
+  "keywords": ["agents", "workflow", "tasks", "supervisor", "tdd", "development", "subagents"]
+}

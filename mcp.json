@@ -19,10 +19,6 @@
         "SUPABASE_ACCESS_TOKEN": "sbp_a056626d50719c5c02d7adc3c78f35d905c2dfab"
       }
     },
-    "browsermcp": {
-      "command": "npx",
-      "args": ["@browsermcp/mcp@latest"]
-    },
     "Ref": {
       "type": "http",
       "url": "https://api.ref.tools/mcp?apiKey=ref-fd7b4ceb643c30336f9b"
@@ -32,6 +28,91 @@
       "args": ["@exa/mcp-server"],
       "env": {
         "EXA_API_KEY": "YOUR_EXA_API_KEY_HERE"
+      }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": ["-y", "@vercel/mcp"],
+      "env": {
+        "VERCEL_API_TOKEN": "YOUR_VERCEL_API_TOKEN_HERE"
+      }
+    },
+    "21st-dev": {
+      "command": "npx",
+      "args": ["-y", "@21st-dev/mcp"]
+    },
+    "magicui": {
+      "command": "npx",
+      "args": ["-y", "@magicuidesign/cli@latest", "mcp"]
+    },
+    "expo": {
+      "url": "https://mcp.expo.dev/mcp"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    },
+    "supadata": {
+      "command": "npx",
+      "args": ["-y", "@supadata/mcp"],
+      "env": {
+        "SUPADATA_API_KEY": "YOUR_SUPADATA_API_KEY_HERE"
+      }
+    },
+    "parallel-ai": {
+      "command": "npx",
+      "args": ["-y", "@parallel-ai/mcp"],
+      "env": {
+        "PARALLEL_API_KEY": "YOUR_PARALLEL_API_KEY_HERE"
+      }
+    },
+    "sudoapp": {
+      "command": "npx",
+      "args": ["-y", "@sudo-app/mcp"],
+      "env": {
+        "SUDO_API_KEY": "YOUR_SUDO_API_KEY_HERE"
+      }
+    },
+    "perplexity": {
+      "command": "npx",
+      "args": ["-y", "@perplexity-ai/mcp"],
+      "env": {
+        "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOURDEPLOYMENTS_ACCESS_TOKEN_HERE"
+      }
+    },
+    "semgrep": {
+      "command": "npx",
+      "args": ["-y", "@semgrep/mcp"],
+      "env": {
+        "SEMGREP_API_KEY": "YOUR_SEMGREP_API_KEY_HERE"
+      }
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "@linear/mcp"],
+      "env": {
+        "LINEAR_API_KEY": "YOUR_LINEAR_API_KEY_HERE"
+      }
+    },
+    "pieces": {
+      "command": "npx",
+      "args": ["-y", "@pieces-app/mcp"],
+      "env": {
+        "PIECES_API_KEY": "YOUR_PIECES_API_KEY_HERE"
+      }
+    },
+    "stripe": {
+      "command": "npx",
+      "args": ["-y", "@stripe/mcp", "--tools=all"],
+      "env": {
+        "STRIPE_SECRET_KEY": "YOUR_STRIPE_SECRET_KEY_HERE"
       }
     }
   }

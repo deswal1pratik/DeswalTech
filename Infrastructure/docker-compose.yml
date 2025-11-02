@@ -1,5 +1,5 @@
 # ============================================================================
-# Unicorn Development Infrastructure
+# DeswalTech Development Infrastructure
 # Centralized backend services for all projects
 # ============================================================================
 
@@ -9,7 +9,7 @@ services:
   # ==========================================================================
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: unicorn-postgres
+    container_name: deswaltech-postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
@@ -21,7 +21,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - unicorn-network
+      - deswaltech-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -33,7 +33,7 @@ services:
   # ==========================================================================
   redis:
     image: redis:7-alpine
-    container_name: unicorn-redis
+    container_name: deswaltech-redis
     restart: unless-stopped
     command: redis-server --appendonly yes --requirepass redispass
     ports:
@@ -41,7 +41,7 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - unicorn-network
+      - deswaltech-network
     healthcheck:
       test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
       interval: 10s
@@ -53,7 +53,7 @@ services:
   # ==========================================================================
   minio:
     image: minio/minio:latest
-    container_name: unicorn-minio
+    container_name: deswaltech-minio
     restart: unless-stopped
     command: server /data --console-address ":9001"
     environment:
@@ -65,7 +65,7 @@ services:
     volumes:
       - minio_data:/data
     networks:
-      - unicorn-network
+      - deswaltech-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
@@ -77,7 +77,7 @@ services:
   # ==========================================================================
   prometheus:
     image: prom/prometheus:latest
-    container_name: unicorn-prometheus
+    container_name: deswaltech-prometheus
     restart: unless-stopped
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -88,14 +88,14 @@ services:
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     networks:
-      - unicorn-network
+      - deswaltech-network
 
   # ==========================================================================
   # Grafana (Monitoring Dashboard)
   # ==========================================================================
   grafana:
     image: grafana/grafana:latest
-    container_name: unicorn-grafana
+    container_name: deswaltech-grafana
     restart: unless-stopped
     environment:
       GF_SECURITY_ADMIN_USER: admin
@@ -106,7 +106,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
-      - unicorn-network
+      - deswaltech-network
     depends_on:
       - prometheus
 
@@ -115,10 +115,10 @@ services:
   # ==========================================================================
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: unicorn-pgadmin
+    container_name: deswaltech-pgadmin
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@unicorn.dev
+      PGADMIN_DEFAULT_EMAIL: admin@deswal.tech
       PGADMIN_DEFAULT_PASSWORD: admin123
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     ports:
@@ -126,7 +126,7 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
     networks:
-      - unicorn-network
+      - deswaltech-network
     depends_on:
       - postgres
 
@@ -134,7 +134,7 @@ services:
 # NETWORKS
 # ============================================================================
 networks:
-  unicorn-network:
+  deswaltech-network:
     driver: bridge
 
 # ============================================================================

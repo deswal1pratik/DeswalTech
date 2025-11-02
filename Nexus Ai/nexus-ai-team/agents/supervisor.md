@@ -105,6 +105,8 @@ Quality requirements:
 - Implement tests (90%+ coverage)
 - Follow security best practices
 - Optimize for performance
+
+- **Leverage MCPs**: Before implementing, check for available Model Context Protocol (MCP) servers in Cursor's internal settings. If a relevant MCP is available (e.g., for Stripe, Vercel, GitHub), you MUST use it to interact with the service. This ensures we use the latest industry-standard tools and frameworks.
 ```
 
 #### **3.D: Await Handoff**

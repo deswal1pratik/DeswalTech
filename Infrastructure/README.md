@@ -1,4 +1,4 @@
-# 🏗️ Unicorn Infrastructure Hub
+# 🏗️ DeswalTech Infrastructure Hub
 
 > Centralized, enterprise-grade backend services for all your projects
 
@@ -38,7 +38,7 @@ docker compose logs -f
 | Redis | `localhost:6379` | Password: `redispass` |
 | MinIO Console | http://localhost:9001 | `minioadmin` / `minioadmin123` |
 | MinIO API | http://localhost:9000 | Same as above |
-| pgAdmin | http://localhost:5050 | `admin@unicorn.dev` / `admin123` |
+| pgAdmin | http://localhost:5050 | `admin@deswal.tech` / `admin123` |
 | Prometheus | http://localhost:9090 | No auth |
 | Grafana | http://localhost:3001 | `admin` / `admin123` |
 
@@ -74,7 +74,7 @@ psql -U postgres -h localhost -c "CREATE DATABASE my_app_db;"
 
 # Using pgAdmin
 # 1. Open http://localhost:5050
-# 2. Login with admin@unicorn.dev / admin123
+# 2. Login with admin@deswal.tech / admin123
 # 3. Add server: localhost:5432
 # 4. Right-click Databases → Create → Database
 ```
@@ -139,13 +139,13 @@ docker compose up -d --build
 
 ```bash
 # Backup all databases
-docker exec unicorn-postgres pg_dumpall -U postgres > backup_$(date +%Y%m%d).sql
+docker exec deswaltech-postgres pg_dumpall -U postgres > backup_$(date +%Y%m%d).sql
 
 # Backup specific database
-docker exec unicorn-postgres pg_dump -U postgres my_app_db > my_app_backup.sql
+docker exec deswaltech-postgres pg_dump -U postgres my_app_db > my_app_backup.sql
 
 # Restore
-docker exec -i unicorn-postgres psql -U postgres < backup.sql
+docker exec -i deswaltech-postgres psql -U postgres < backup.sql
 ```
 
 ### Backup MinIO Data
@@ -192,7 +192,7 @@ brew services stop postgresql  # If you have Homebrew Postgres
 ### Cannot connect from project
 
 1. Ensure services are running: `docker compose ps`
-2. Check network: `docker network ls | grep unicorn`
+2. Check network: `docker network ls | grep deswaltech`
 3. Verify credentials in `.env.local`
 4. Check firewall settings
 
@@ -216,7 +216,7 @@ cd ~/Developer/Infrastructure
 git init
 
 # 2. Create private GitHub repo
-gh repo create unicorn-infrastructure --private --source=. --remote=origin
+gh repo create deswaltech-infrastructure --private --source=. --remote=origin
 
 # 3. Add files
 git add .
@@ -229,7 +229,7 @@ git push -u origin main
 ```bash
 # 1. Clone infrastructure
 cd ~/Developer
-git clone git@github.com:YOUR_USERNAME/unicorn-infrastructure.git Infrastructure
+git clone git@github.com:YOUR_USERNAME/deswaltech-infrastructure.git Infrastructure
 
 # 2. Start services
 cd Infrastructure
@@ -253,7 +253,7 @@ docker compose up -d
 
 This infrastructure is designed to work with:
 
-1. **Tier 2**: Shared packages (`@unicorn/*`)
+1. **Tier 2**: Shared packages (`@deswaltech/*`)
 2. **Tier 3**: Project templates
 3. **Tier 4**: Your actual projects
 
@@ -320,5 +320,5 @@ When adding new services:
 
 **Version**: 1.0.0  
 **Last Updated**: October 5, 2025  
-**Maintained By**: Your Team
+**Maintained By**: DeswalTech
 

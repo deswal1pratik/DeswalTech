@@ -1,8 +1,8 @@
 #!/bin/bash
-# Stop all unicorn infrastructure services
+# Stop all deswaltech infrastructure services
 
-echo "🛑 Stopping Unicorn Infrastructure Services..."
-cd ~/Developer/Infrastructure
+echo "🛑 Stopping DeswalTech Infrastructure Services..."
+cd "$(dirname "$0")"
 docker compose down
 
 echo "✅ Services Stopped!"

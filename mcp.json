@@ -3,6 +3,9 @@
     "Figma": {
       "url": "http://127.0.0.1:3845/mcp"
     },
+    "deswaltech-local": {
+      "url": "http://localhost:3001"
+    },
     "shadcn": {
       "command": "npx",
       "args": ["shadcn@latest", "mcp"]

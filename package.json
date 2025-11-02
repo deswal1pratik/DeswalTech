@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "AI-Powered Development Powerhouse - Build production-ready projects with Claude AI orchestration",
   "main": "dist/index.js",
-  "bin": {
-    "deswaltech": "./bin/deswaltech",
-    "create-deswaltech-app": "./bin/create-deswaltech-app"
-  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -18,9 +14,6 @@
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "postbuild": "cp package.json dist/",
-    "install-project": "node scripts/install-project.js",
-    "setup": "node scripts/setup.js",
-    "powerhouse": "node scripts/powerhouse.js",
     "verify": "node scripts/verify-package.js",
     "prepublishOnly": "node scripts/verify-package.js"
   },
@@ -128,20 +121,13 @@
   },
   "homepage": "https://github.com/deswal1pratik/DeswalTech#readme",
   "files": [
-    "bin/",
-    "agents/",
+    "Nexus Ai/",
     "Infrastructure/",
     "mcp-server/",
-    "Templates/",
-    "Tools/",
     "scripts/",
     "docs/",
-    "AI_AGENT_GUIDE.md",
-    "ORCHESTRATOR_INSTRUCTIONS.md",
     "README.md",
     "LICENSE",
-    "CONTRIBUTING.md",
-    "PUBLISHING.md",
     "mcp.json",
     "railway.json",
     ".npmignore"

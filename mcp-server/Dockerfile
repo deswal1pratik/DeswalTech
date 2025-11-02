@@ -1,4 +1,4 @@
-# Multi-stage build for Universal AI Expert Orchestration MCP Server
+# Multi-stage build for DeswalTech MCP Server
 
 # Stage 1: Build stage
 FROM node:18-alpine AS builder

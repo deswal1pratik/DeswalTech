@@ -1,8 +1,8 @@
 #!/bin/bash
-# Restart all unicorn infrastructure services
+# Restart all deswaltech infrastructure services
 
-echo "🔄 Restarting Unicorn Infrastructure Services..."
-cd ~/Developer/Infrastructure
+echo "🔄 Restarting DeswalTech Infrastructure Services..."
+cd "$(dirname "$0")"
 docker compose restart
 
 echo "✅ Services Restarted!"

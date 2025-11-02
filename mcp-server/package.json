@@ -1,7 +1,7 @@
 {
-  "name": "universal-ai-expert-orchestration-mcp-server",
+  "name": "deswaltech-mcp-server",
   "version": "1.0.0",
-  "description": "Enhanced MCP Server for Universal AI Expert Orchestration System",
+  "description": "MCP Server for the DeswalTech project",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -14,8 +14,8 @@
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "postbuild": "cp package.json dist/",
-    "docker:build": "docker build -t universal-ai-mcp-server .",
-    "docker:run": "docker run -p 3001:3001 universal-ai-mcp-server",
+    "docker:build": "docker build -t deswaltech-mcp-server .",
+    "docker:run": "docker run -p 3001:3001 deswaltech-mcp-server",
     "docker:compose": "docker-compose up -d"
   },
   "keywords": [
@@ -28,7 +28,7 @@
     "websocket",
     "enterprise"
   ],
-  "author": "Universal AI Expert Orchestration System",
+  "author": "DeswalTech",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.4.0",
@@ -101,10 +101,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/universal-ai-expert-orchestration/mcp-server.git"
+    "url": "https://github.com/deswal1pratik/DeswalTech.git"
   },
   "bugs": {
-    "url": "https://github.com/universal-ai-expert-orchestration/mcp-server/issues"
+    "url": "https://github.com/deswal1pratik/DeswalTech/issues"
   },
-  "homepage": "https://github.com/universal-ai-expert-orchestration/mcp-server#readme"
+  "homepage": "https://github.com/deswal1pratik/DeswalTech#readme"
 }

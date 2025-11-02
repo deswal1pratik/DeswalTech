@@ -70,10 +70,6 @@ async function verify() {
     ['package.json', 'Package configuration'],
     ['README.md', 'Main documentation'],
     ['LICENSE', 'License file'],
-    ['AI_AGENT_GUIDE.md', 'AI Agent guide'],
-    ['ORCHESTRATOR_INSTRUCTIONS.md', 'Orchestrator instructions'],
-    ['CONTRIBUTING.md', 'Contributing guidelines'],
-    ['PUBLISHING.md', 'Publishing guide'],
     ['.gitignore', 'Git ignore file'],
     ['.npmignore', 'npm ignore file'],
     ['mcp.json', 'MCP configuration'],
@@ -86,46 +82,38 @@ async function verify() {
   }
   log('');
   
-  // 2. Binary/Executable Files
-  log('🔧 Verifying Executable Files...', 'bright');
-  const binFiles = [
-    ['bin/deswaltech', 'DeswalTech CLI'],
-    ['bin/create-deswaltech-app', 'Project initializer'],
-  ];
-  
-  for (const [file, desc] of binFiles) {
-    const filePath = path.join(rootDir, file);
-    const passed = await verifyFile(filePath, desc);
-    if (!passed) {
-      allPassed = false;
-    } else {
-      // Check if executable
-      try {
-        await fs.access(filePath, fs.constants.X_OK);
-        log(`    ✓ Executable permissions OK`, 'green');
-      } catch (error) {
-        log(`    ⚠ Not executable (run: chmod +x ${file})`, 'yellow');
-      }
-    }
-  }
-  log('');
-  
-  // 3. Agent Files
-  log('👥 Verifying Specialist Agent Files...', 'bright');
+  // 2. Nexus AI Agent Files
+  log('👥 Verifying Nexus AI Agent Files...', 'bright');
   const agentFiles = [
-    'ai-expert-orchestrator.md',
-    'backend-expert-agent.md',
-    'frontend-expert-agent.md',
-    'mobile-expert-agent.md',
-    'devops-expert-agent.md',
-    'qa-expert-agent.md',
-    'security-expert-agent.md',
-    'business-expert-agent.md',
+    'architect.md',
+    'backend.md',
+    'devops.md',
+    'frontend.md',
+    'qa-tester.md',
+    'security.md',
+    'supervisor.md',
   ];
   
-  const agentsDir = path.join(rootDir, 'agents');
+  const agentsDir = path.join(rootDir, 'Nexus Ai/nexus-ai-team/agents');
   for (const file of agentFiles) {
     const passed = await verifyFile(path.join(agentsDir, file), file);
+    if (!passed) allPassed = false;
+  }
+  log('');
+
+  // 3. Nexus AI Skill Files
+  log('🛠️ Verifying Nexus AI Skill Files...', 'bright');
+  const skillFiles = [
+    'core/delegator/SKILL.md',
+    'core/socratic-brainstorm/SKILL.md',
+    'workflow/prd-creator/SKILL.md',
+    'workflow/task-executor/SKILL.md',
+    'workflow/task-parser/SKILL.md',
+  ];
+
+  const skillsDir = path.join(rootDir, 'Nexus Ai/nexus-ai-team/skills');
+  for (const file of skillFiles) {
+    const passed = await verifyFile(path.join(skillsDir, file), file);
     if (!passed) allPassed = false;
   }
   log('');
@@ -133,11 +121,6 @@ async function verify() {
   // 4. Scripts
   log('📜 Verifying Scripts...', 'bright');
   const scriptFiles = [
-    'install-project.js',
-    'setup.js',
-    'powerhouse.js',
-    'status.js',
-    'ask.js',
     'verify-package.js',
   ];
   
@@ -180,41 +163,8 @@ async function verify() {
   }
   log('');
   
-  // 7. Templates
-  log('📋 Verifying Templates...', 'bright');
-  const templateDirs = [
-    'Templates/api-backend-template',
-    'Templates/web-app-template',
-    'Templates/mobile-app-template',
-  ];
-  
-  for (const dir of templateDirs) {
-    const passed = await verifyDirectory(path.join(rootDir, dir), dir);
-    if (!passed) allPassed = false;
-  }
-  log('');
-  
-  // 8. Documentation
-  log('📚 Verifying Documentation...', 'bright');
-  const docFiles = [
-    'START_HERE_REAL_GUIDE.md',
-    'DESWALTECH_QUICK_REFERENCE.md',
-    'DESWALTECH_COMPLETE_GUIDE.md',
-    'DESWALTECH_SETUP_GUIDE.md',
-    'DESWALTECH_WORKFLOWS.md',
-    'DESWALTECH_ARCHITECTURE.md',
-    'DEPLOYMENT_GUIDE.md',
-    'README.md',
-  ];
-  
-  const docsDir = path.join(rootDir, 'docs');
-  for (const file of docFiles) {
-    const passed = await verifyFile(path.join(docsDir, file), file);
-    if (!passed) allPassed = false;
-  }
-  log('');
-  
-  // 9. Package.json Validation
+
+  // 8. Package.json Validation
   log('⚙️ Verifying package.json Configuration...', 'bright');
   try {
     const packageJson = await fs.readJson(path.join(rootDir, 'package.json'));
@@ -223,8 +173,6 @@ async function verify() {
       [packageJson.name === 'deswaltech', 'Package name is "deswaltech"'],
       [packageJson.version, 'Version is set'],
       [packageJson.description, 'Description is set'],
-      [packageJson.bin && packageJson.bin.deswaltech, 'deswaltech bin is defined'],
-      [packageJson.bin && packageJson.bin['create-deswaltech-app'], 'create-deswaltech-app bin is defined'],
       [packageJson.keywords && packageJson.keywords.length > 0, 'Keywords are defined'],
       [packageJson.repository && packageJson.repository.url, 'Repository URL is set'],
       [packageJson.license === 'MIT', 'License is MIT'],
@@ -233,7 +181,7 @@ async function verify() {
     ];
     
     for (const [passed, desc] of checks) {
-      if (passed) {
+      if (passed) {.
         log(`  ✅ ${desc}`, 'green');
       } else {
         log(`  ❌ ${desc}`, 'red');
@@ -246,7 +194,7 @@ async function verify() {
   }
   log('');
   
-  // 10. .gitignore Validation
+  // 9. .gitignore Validation
   log('🚫 Verifying .gitignore...', 'bright');
   try {
     const gitignore = await fs.readFile(path.join(rootDir, '.gitignore'), 'utf8');
@@ -271,12 +219,11 @@ async function verify() {
   }
   log('');
   
-  // 11. .npmignore Validation
+  // 10. .npmignore Validation
   log('📦 Verifying .npmignore...', 'bright');
   try {
     const npmignore = await fs.readFile(path.join(rootDir, '.npmignore'), 'utf8');
     const checks = [
-      [npmignore.includes('*.ts') && npmignore.includes('!*.d.ts'), 'Excludes TypeScript source but includes declarations'],
       [npmignore.includes('test'), 'Excludes tests'],
       [npmignore.includes('.git'), 'Excludes .git'],
       [npmignore.includes('node_modules'), 'Excludes node_modules'],
@@ -304,7 +251,7 @@ async function verify() {
     log('Next steps:', 'bright');
     log('1. Commit all changes: git add . && git commit -m "Prepare for distribution"', 'cyan');
     log('2. Push to GitHub: git push origin main', 'cyan');
-    log('3. Create GitHub release: See PUBLISHING.md', 'cyan');
+    log('3. Create GitHub release: See README.md for new instructions', 'cyan');
     log('4. Publish to npm: npm publish --access public', 'cyan');
   } else {
     log('❌ Some verifications failed', 'red');

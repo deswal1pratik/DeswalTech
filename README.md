@@ -1,246 +1,276 @@
 # 🚀 DeswalTech v4.0 (Codename: Nexus)
 **The Ultimate AI Agent Team System - Perfection Merge Edition**
 
-**Status**: ✅ Active & Production-Ready  
-**Date**: October 28, 2025  
-**Version**: 4.0 (Nexus)
+**Status**: ✅ Active & Production-Ready
+**Date**: October 28, 2025
 
 ---
 
 ## 1. Executive Summary
 
-This repository contains the **Nexus Ai Team**, the world's most advanced, production-grade AI agent team.
+This repository contains the **Nexus AI Team**, a clean, stable, and production-ready system for building full-stack applications using a team of coordinated AI agents.
 
-This system is the result of a "Perfection Merge" between two powerful systems:
-* **DeswalTech (The "Brain"):** Provided 7,772+ lines of "ultra-consolidated," 2025-spec domain expertise.
-* **Nexus Ai (The "Nervous System"):** Provided a modern, precision-workflow architecture (Subagents, Agent Skills, and a "wait-for-yes" execution protocol).
+It is the result of a "Perfection Merge" between two powerful concepts:
+*   **DeswalTech (The "Brain"):** 7,772+ lines of ultra-deep, 2025-spec domain expertise across 7 critical software engineering domains.
+*   **Nexus AI (The "Nervous System"):** A modern, precision-workflow architecture featuring Subagents, Agent Skills, and a non-negotiable **"wait-for-yes" execution protocol** that ensures human oversight.
 
 The result is a team of expert agents that possess both **unmatched depth** and **unwavering discipline**.
 
----
-
-## 2. The Operational System (Start Here)
-
-The *only* operational system in this repository is located in the `Nexus Ai/nexus-ai-team/` folder.
-
-```
-DeswalTech/
-└── 🚀 Nexus Ai/nexus-ai-team/  <-- THIS IS THE ACTIVE SYSTEM
-    ├── agents/                  (7 perfected, enterprise-grade agents)
-    ├── skills/                  (5 precision workflow skills)
-    └── README.md                (System README & Install Guide)
-```
-
-**To use this system, see the `Nexus Ai/nexus-ai-team/README.md` file for installation and usage instructions.**
-
-The primary workflow is:
-1.  Install the `nexus-ai-team` plugin in Claude Code.
-2.  Start your session with `/agent supervisor`.
-3.  The Supervisor will guide you through the entire project lifecycle, from PRD to deployment.
+**Final Audit Verdict**: ✅ **APPROVED FOR PRODUCTION USE**
 
 ---
 
-## 3. Quick Start
+## 2. System Strengths: The Best of Both Worlds
 
-### Installation (Claude Code Plugin)
+The Nexus AI team possesses:
 
-```bash
-# 1. Navigate to the marketplace directory
-cd "/Users/pratikdeswal/Projects/DeswalTech/Nexus Ai/local-marketplace"
+### From DeswalTech (The "Brain"):
+- ✅ **Ultra-Deep Domain Expertise**: 7,772 lines of knowledge integrated.
+- ✅ **Latest 2025 Tech Stacks**: Argon2id, React 19, Next.js 15, K8s 1.29+, PostgreSQL 16+.
+- ✅ **PBVS Lifecycle**: A proven Plan → Build → Validate → Scale project lifecycle.
+- ✅ **3-Level Quality Gates**: Enforcing automated, integration, and business quality checks.
+- ✅ **Real Code Patterns**: 50+ patterns for advanced security, caching, and performance.
 
-# 2. Add the local marketplace to Claude Code
+### From Nexus AI (The "Nervous System"):
+- ✅ **Subagent Architecture**: Isolated contexts for each agent to prevent errors.
+- ✅ **Agent Skills**: Reusable, structured workflows for common tasks (e.g., creating PRDs, parsing tasks).
+- ✅ **Task-Executor Protocol**: A non-negotiable "wait-for-yes" loop that ensures you have full control.
+- ✅ **RPG-Structured PRDs**: Automatic dependency tracking and task ordering.
+- ✅ **Precise Handoffs**: Explicit control transfer between agents.
+
+---
+
+## 3. Quick Start: Installation & First Project
+
+The operational system is a Claude Code plugin named `nexus-ai-team`.
+
+### Step 1: Add Local Marketplace to Claude Code
+
+Open Claude Code and run this command in the chat:
+
+```
 /plugin marketplace add /Users/pratikdeswal/Projects/DeswalTech/Nexus Ai/local-marketplace
+```
 
-# 3. Install the plugin
+### Step 2: Install the Nexus AI Team Plugin
+
+After adding the marketplace, run:
+
+```
 /plugin install nexus-ai-team@local-nexus-marketplace
-
-# 4. Restart Claude Code
-
-# 5. Start building!
-/agent supervisor
 ```
 
-### Your First Project
+### Step 3: Restart Claude Code
+
+Close and restart your editor to activate the plugin.
+
+### Step 4: Verify Installation
+
+After restarting, run `/plugin list`. You should see `nexus-ai-team@local-nexus-marketplace` as installed.
+
+### Step 5: Start Your First Project!
+
+Always start by invoking the **Supervisor**. Provide a high-level goal. For example:
 
 ```
 /agent supervisor
 
-Build a task management app:
-- User authentication (email/password)
-- CRUD operations for tasks
-- Basic web interface
-- Deploy to staging
+Build a Hello World API:
+- Single GET endpoint at /api/hello that returns {"message": "Hello World"}
+- Unit test for the endpoint
+- Dockerfile for deployment
 
-Timeline: 3 days
+Timeline: 30 minutes
 Quality: Production-ready
-
-Let's build! 🚀
 ```
 
-The Supervisor will:
-1. Create an RPG-structured PRD (with dependencies)
-2. Parse it into a dependency-aware `TASKS.md` file
-3. Delegate tasks to specialists (backend, frontend, qa, devops, security)
-4. Each specialist completes ONE task, waits for "yes", hands back
-5. Process repeats until production deployment
+---
+
+## 🚀 Achieving Maximum Potential with DeswalTech
+
+DeswalTech is more than just a collection of agents; it's a sophisticated, multi-agent system designed to deliver enterprise-grade software with precision and control. To unlock its full potential, it's crucial to embrace its core workflow and understand your role as the project administrator.
+
+### The Philosophy: You are the Architect, the Supervisor is your Foreman
+
+Think of yourself as the architect and CEO of your project. You provide the vision, set the strategic direction, and make the final decisions. The `supervisor` agent is your expert foreman, responsible for translating your vision into a concrete plan and managing the team of specialist agents to execute it flawlessly.
+
+Your goal is not to micromanage the agents, but to provide clear, high-level direction and to act as the final approver at critical checkpoints.
+
+### Phase 1: The Vision - Strategic Planning with the Supervisor
+
+This is the most important phase. A well-defined plan is the foundation for a successful project.
+
+1.  **Start with a Clear Goal:** When you invoke the `supervisor`, don't just give it a vague idea. Provide a clear, concise summary of what you want to build. The more specific you are, the better the `supervisor` can understand your vision.
+
+2.  **Embrace the Socratic Dialogue:** The `supervisor` will ask you clarifying questions. This is not a sign of weakness, but a crucial part of the process. Your answers will shape the project's requirements and ensure that the final product meets your expectations.
+
+3.  **The PRD is Your Contract:** The Product Requirements Document (PRD) is the single source of truth for the project. Review it carefully before approving it. A well-defined PRD will prevent misunderstandings and ensure that the agents build the right thing.
+
+### Phase 2: The Blueprint - From Vision to Actionable Tasks
+
+Once the PRD is approved, the `supervisor` will create a detailed `TASKS.md` file. This is where the magic happens.
+
+*   **Trust the Process:** The `supervisor` uses a sophisticated dependency-aware algorithm to break down the PRD into a series of actionable tasks, ordered for maximum efficiency. You don't need to worry about the order of execution; the `supervisor` has it covered.
+
+*   **Review the Plan:** While you don't need to micromanage, it's a good idea to review the `TASKS.md` file to get a high-level understanding of the execution plan.
+
+### Phase 3: The Assembly Line - Flawless Execution
+
+This is where the specialist agents shine. The `supervisor` will delegate each task to the most appropriate agent.
+
+*   **The "One Sub-Task at a Time" Protocol:** This is the core of DeswalTech's safety and control mechanism. Each agent will complete a small, incremental sub-task and then **stop and wait for your approval**. This gives you complete control over the development process.
+
+*   **Your Role: The Approver:** Your primary role during this phase is to review the agent's work and provide a simple "yes" or "no". A quick "yes" keeps the assembly line moving. A "no" allows you to provide feedback and course-correct early.
+
+*   **Leverage the Power of MCPs:** When providing the initial requirements, think about what external services you need. If you need to process payments, mention Stripe. If you want to deploy to Vercel, say so. The `supervisor` will instruct the specialist agents to use the available Model Context Protocol (MCP) servers, ensuring that your project is built with the latest industry-standard tools.
+
+### Phase 4 & 5: The Launch - Quality and Deployment
+
+DeswalTech is designed to produce production-ready software.
+
+*   **Trust the Quality Gates:** The system has a rigorous, 3-level quality gate process. You can be confident that the code produced by the agents is of high quality.
+
+*   **Automated Deployment:** The `devops` agent will handle the complexities of deployment, whether you're using Docker, Kubernetes, or a platform like Vercel.
+
+### The Golden Rule: High-Level Vision, Low-Level Trust
+
+To achieve maximum potential with DeswalTech, remember this golden rule:
+
+> **Provide a clear, high-level vision to the `supervisor`, and then trust the system to handle the low-level details.**
+
+Your power lies not in writing code, but in making strategic decisions and providing clear feedback. Embrace your role as the architect, and let your expert AI team handle the rest.
 
 ---
 
-## 4. The Team (7 Expert Agents)
+## 4. The Core Workflow
 
-### 🎯 **Supervisor** (AI Expert Orchestrator)
-**Role**: Project Manager & Strategic Coordinator  
-**Tools**: PRD creation, task parsing, delegation, progress tracking  
-**Does NOT**: Write implementation code  
-**Start with**: `/agent supervisor`
+The system follows a strict, automated workflow that gives you full visibility and control.
 
-### 🏗️ **Architect** (System Designer)
-**Role**: Database schemas, API contracts, C4 diagrams, NFRs  
-**Expertise**: PostgreSQL 16+, OpenAPI 3.1, architecture patterns  
-**Delivers**: Blueprints for backend/frontend to implement
+```mermaid
+graph TD
+    A[User: /agent supervisor] --> B[Supervisor Agent]
+    B --> C{Phase 1: PLAN}
+    C --> D[workflow/prd-creator skill]
+    D --> E[RPG-Structured PRD created]
+    E --> F{Phase 2: PARSE}
+    F --> G[workflow/task-parser skill]
+    G --> H[TASKS.md generated with dependencies]
+    H --> I{Phase 3: BUILD}
+    I --> J[core/delegator skill]
+    J --> K{Select Best Specialist}
+    K --> L[backend, frontend, etc.]
+    L --> M[workflow/task-executor skill]
+    M --> N[Implement ONE task]
+    N --> O[STOP - Ask for approval]
+    O --> P{User replies 'yes'?}
+    P -->|Yes| Q[Commit changes & hand back]
+    P -->|No| N
+    Q --> B
+    B --> R{More tasks?}
+    R -->|Yes| I
+    R -->|No| S{Phase 4 & 5: VALIDATE & SCALE}
+    S --> T[✅ COMPLETE]
+```
 
-### 🔧 **Backend** (API & Logic Expert)
-**Role**: Server-side code, APIs, databases, authentication  
-**Expertise**: Node.js 20 LTS, Argon2id, PostgreSQL 16+, Redis 7+, JWT  
-**Coverage**: >90% test coverage, <100ms API p95
-
-### 🎨 **Frontend** (UI/UX Expert)
-**Role**: Web/mobile UIs, components, state management  
-**Expertise**: React 19, Next.js 15, shadcn/ui, Tailwind 4+  
-**Standards**: WCAG 2.1 AA (100%), Lighthouse >95, <500KB bundle
-
-### 🧪 **QA Tester** (Quality Assurance)
-**Role**: Unit, integration, E2E, load, accessibility testing  
-**Expertise**: Vitest, Playwright, k6, axe-core  
-**Pyramid**: 70% unit, 20% integration, 10% E2E
-
-### 🐳 **DevOps** (Infrastructure & Deployment)
-**Role**: CI/CD, Docker, Kubernetes, cloud deployment  
-**Expertise**: K8s 1.29+, Docker 25+, GitHub Actions, Terraform 1.7+  
-**SLA**: 99.9% uptime, <5 minute deployments
-
-### 🔐 **Security** (Security & Compliance)
-**Role**: Security audits, OWASP compliance, vulnerability assessment  
-**Expertise**: OWASP Top 10 2025, NIST SSDF, Zero Trust  
-**Standards**: 0 critical vulnerabilities, Argon2id, TLS 1.3
+**The "Wait for Yes" Protocol is CRITICAL**: Every agent will complete ONE task, then STOP and ask for your approval. This gives you precise control over every step.
 
 ---
 
-## 5. Technology Stack (2025 Latest)
+## 5. The Nexus AI Team (7 Expert Agents)
+
+**⭐ IMPORTANT**: Always start with `/agent supervisor`. The Supervisor will delegate to other agents automatically.
+
+| Agent | Invoke With | Use For |
+|---|---|---|
+| 🎯 **Supervisor** | `/agent supervisor` | ⭐ **START HERE** - Project management, orchestration |
+| 🏗️ **Architect** | `/agent architect` | Database schema, system design, API contracts |
+| 🔧 **Backend** | `/agent backend` | APIs, databases, authentication, business logic |
+| 🎨 **Frontend** | `/agent frontend` | Web UI, React components, styling |
+| 🧪 **QA Tester** | `/agent qa-tester` | Unit, integration, E2E, and load testing |
+| 🐳 **DevOps** | `/agent devops` | Docker, Kubernetes, CI/CD, and deployment |
+| 🔐 **Security** | `/agent security` | Security audits, OWASP compliance, vulnerability scanning |
+
+---
+
+## 6. Technology Stack (2025 Latest)
+
+This system builds with a modern, enterprise-grade technology stack.
 
 ### Backend
 - **Runtime**: Node.js 20 LTS
 - **Language**: TypeScript 5.3+ (strict mode)
 - **Framework**: Fastify 4.x | NestJS 10.x
-- **Database**: PostgreSQL 16+ (pgvector, pg_trgm)
-- **Caching**: Redis 7+ (Cluster mode)
-- **ORM**: Prisma 5.x | Drizzle ORM
+- **Database**: PostgreSQL 16+
 - **Password**: **Argon2id** (replaces bcrypt)
-- **Auth**: JWT (15min access, 7day refresh)
-- **Validation**: Zod 3.22+
-- **Testing**: Vitest 1.x | Jest 29.x
 
 ### Frontend
 - **Framework**: Next.js 15+ (App Router)
 - **React**: React 19+ (Server Components)
-- **TypeScript**: TypeScript 5.3+ (strict)
 - **Styling**: TailwindCSS 4+ + shadcn/ui
-- **State**: Zustand 4.4+ + React Query 5+
-- **Forms**: React Hook Form 7+ + Zod
-- **Testing**: Vitest, Playwright 1.40+, axe-core
-- **Build**: Vite 5+
 
-### DevOps
+### DevOps & Security
 - **Container**: Docker 25+, Kubernetes 1.29+
 - **CI/CD**: GitHub Actions, ArgoCD (GitOps)
-- **IaC**: Terraform 1.7+
-- **Monitoring**: Prometheus + Grafana + Loki + Tempo
-- **Security**: Trivy, Falco, OPA Gatekeeper
-
-### Security
-- **Standards**: OWASP Top 10 2025, NIST SSDF
-- **Encryption**: AES-256-GCM (rest), TLS 1.3 (transit)
-- **Hashing**: Argon2id (memory: 64MB, iterations: 3)
-- **Authorization**: RBAC + Row-Level Security (RLS)
+- **Security**: OWASP Top 10 2025, NIST SSDF, Trivy, Falco
 
 ---
 
-## 6. Quality Gates (3 Levels)
+## 7. Quality Gates Framework
 
-### Level 1: Automated (Real-time)
-- ✅ Code quality: ESLint, Prettier, TypeScript strict
-- ✅ Test coverage: >90% backend, >85% frontend
-- ✅ Security: 0 critical vulnerabilities (Trivy, npm audit)
-- ✅ Performance: API p95 <100ms, Lighthouse >95
-- ✅ Accessibility: WCAG 2.1 AA (axe-core 0 violations)
+The system enforces a 3-level quality gate process to ensure production-readiness.
 
-### Level 2: Integration (Daily)
-- ✅ Cross-agent integration validated
-- ✅ E2E workflow testing (Playwright)
-- ✅ API contract compliance (OpenAPI)
-- ✅ Load testing (k6: 1000 RPS)
-- ✅ Security compliance
-
-### Level 3: Business (Weekly/Pre-Launch)
-- ✅ Feature completeness (100% PRD met)
-- ✅ User satisfaction (4.5+/5)
-- ✅ Performance SLA (99.9% uptime)
-- ✅ Security audit (penetration testing)
-- ✅ Stakeholder approval
+- **Level 1: Automated (Real-time)**: Enforced by the CI/CD pipeline on every commit. Includes code quality checks, >90% test coverage, security scans, and performance budgets.
+- **Level 2: Integration (Daily)**: Verified by the AI team. Includes end-to-end workflow testing, API contract validation, and cross-component integration checks.
+- **Level 3: Business (Weekly/Pre-Launch)**: Validated by the human user and the Supervisor. Includes feature completeness, user experience validation, and stakeholder approval.
 
 ---
 
-## 7. Performance Targets
+## 8. Performance Targets
 
-| Metric | Target | Tool |
-|--------|--------|------|
-| API Response (p95) | <100ms | k6 |
-| API Response (p99) | <200ms | k6 |
-| Database Query (p95) | <50ms | Profiling |
+| Metric | Target | Validation Method |
+|---|---|---|
+| API Response (p95) | <100ms | k6 load testing |
+| Database Query (p95) | <50ms | Query profiling |
 | Page Load (LCP) | <2.5s | Lighthouse |
-| Frontend Bundle | <500KB gzipped | Webpack |
-| Lighthouse Score | >95 | CI/CD |
-| Test Coverage | >90% backend, >85% frontend | Coverage |
-| Uptime SLA | 99.9% | Prometheus |
+| Lighthouse Score | >95 all categories | CI/CD pipeline |
+| Uptime SLA | 99.9% | Prometheus monitoring |
 
 ---
 
-## 8. Merge Documentation
+## 9. Security Standards
 
-For a complete breakdown of *what* was merged, *why*, and *how* the two systems were synthesized, see the official report:
+Security is built-in and non-negotiable, following the latest 2025 standards.
 
-📄 **`Nexus Ai/PERFECTION_MERGE_REPORT.md`** (~11,000 words)
-
-**Contents**:
-- What was done (7 files synthesized)
-- Why it was done (depth + discipline)
-- How it was done (3-phase process)
-- Where it was done (file locations)
-- Key technical achievements (2025 stacks)
-- Critical implementation details (task-executor protocol)
-- Measurable results (before/after comparison)
-- How to use the system (quick start, examples)
-- Recommendations (testing, enhancements, maintenance)
+- **Frameworks**: OWASP Top 10 2025, NIST SSDF.
+- **Authentication**: JWTs with 15-minute access tokens and 7-day refresh tokens.
+- **Password Hashing**: **Argon2id** is used instead of bcrypt.
+- **Encryption**: AES-256-GCM for data at rest, TLS 1.3 for data in transit.
+- **Authorization**: Role-Based Access Control (RBAC) and Row-Level Security (RLS) in PostgreSQL.
 
 ---
 
-## 9. Legacy Knowledge Archive
+## 10. MCP (Model Context Protocol) Services
 
-All 7,772+ lines of the original "DeswalTech" agent prompts have been preserved as a "knowledge archive." They are no longer operational but serve as the foundational source material for the new agents.
+The agents can leverage over 20 external tools and services. To use them, simply mention them in your requirements (e.g., "Deploy to Vercel" or "Add a shadcn button"). The table below lists some of the key services available.
 
-📁 **`_legacy_knowledge_archive/`** - Contains all original DeswalTech agent prompts and documentation
+| Service | Category | Use For |
+|---|---|---|
+| **Figma** | Design & UI | Syncing designs and components |
+| **shadcn** | Design & UI | High-quality React components |
+| **Expo** | Mobile Dev | Building React Native apps |
+| **Playwright** | Web & Testing | Browser automation and E2E testing |
+| **Vercel** | Deployment | Deploying frontend projects |
+| **GitHub** | Deployment | Managing repos, issues, and PRs |
+| **Stripe** | Payments | Processing payments and subscriptions |
+| **Supabase** | Database | PostgreSQL database, auth, and real-time data |
+| **Semgrep** | Code Quality | Static code analysis for bugs and vulnerabilities |
+| **Linear** | Project Mgmt | Managing tasks and tracking sprints |
 
-**Contents**:
-- 9 agent files (7,419 lines)
-- ORCHESTRATOR.md (648 lines)
-- 📖_READ_THIS_FIRST.md (850+ lines)
-- COMPLETE_EXTRACTION_MAP.md (809 lines)
-
-**Total Archived**: ~9,700+ lines
+*Note: Some services require API keys to be set in the `mcp.json` file.*
 
 ---
 
-## 10. Repository Structure
+## 11. Repository Structure
 
 ```
 DeswalTech/
@@ -248,257 +278,31 @@ DeswalTech/
 │
 ├── 🚀 Nexus Ai/                          ⭐ THE OPERATIONAL SYSTEM
 │   ├── nexus-ai-team/                    (7 agents + 5 skills)
-│   │   ├── agents/                       (supervisor, backend, frontend, etc.)
-│   │   ├── skills/                       (prd-creator, task-parser, task-executor, etc.)
-│   │   └── README.md                     (Installation & usage guide)
-│   ├── local-marketplace/                (Plugin marketplace config)
-│   ├── AGENTS.md                         (Agent overview)
-│   └── PERFECTION_MERGE_REPORT.md        (Complete merge documentation)
+│   │   ├── agents/                       (supervisor, backend, etc.)
+│   │   └── skills/                       (prd-creator, task-parser, etc.)
+│   └── local-marketplace/                (Plugin marketplace config)
 │
-├── 📁 _legacy_knowledge_archive/         (Archived knowledge - reference only)
-│   ├── README.md                         (Archive documentation)
-│   ├── ORCHESTRATOR.md                   (Legacy orchestrator)
-│   ├── 📖_READ_THIS_FIRST.md            (Legacy guide)
-│   ├── COMPLETE_EXTRACTION_MAP.md        (Extraction map)
-│   └── agents/                           (9 legacy agent files)
+├── 📁 .archive/                          (Archived legacy files)
 │
 ├── 🔧 Infrastructure/                    (Local dev infrastructure)
-│   ├── docker-compose.yml                (PostgreSQL, Redis, MinIO)
-│   └── monitoring/                       (Prometheus config)
 │
 ├── 🛠️ mcp-server/                        (MCP server implementation)
-├── 📜 scripts/                           (Utility scripts)
-├── 📋 Templates/                         (Project templates)
-├── 🔨 Tools/                             (CLI tools)
 │
-└── 📖 Documentation Files
-    ├── CHANGELOG.md                      (Version history)
-    ├── CONTRIBUTING.md                   (How to contribute)
-    ├── INSTALLATION.md                   (Installation guide)
-    ├── PUBLISHING.md                     (Publishing guide)
-    ├── MCP_SETUP_GUIDE.md               (MCP setup)
-    └── LICENSE                           (MIT License)
+├── 📜 scripts/                           (Utility scripts)
+│
+├── 📋 PROJECT_CONTEXT_TEMPLATE.md         (Template for new projects)
+│
+├── 📄 LICENSE                            (Project License)
+│
+├── 📄 mcp.json                           (MCP server configurations)
+│
+├── 📄 package.json                        (Project dependencies)
+│
+└── 📄 .gitignore                         (Git ignore file)
 ```
 
 ---
 
-## 11. Key Features
+## 13. License
 
-### ✨ The Task-Executor Protocol
-
-**The Secret Sauce**: Every specialist agent follows this exact protocol:
-
-1. **Acknowledge** task from Supervisor
-2. **Implement** code + tests
-3. **STOP** (do not continue!)
-4. **Ask** for approval ("Reply 'yes' to approve")
-5. **WAIT** for user to reply "yes"
-6. **Commit** only after approval
-7. **Report** completion to Supervisor
-
-**Why**: Prevents agents from "running ahead", ensures human oversight, allows corrections before commit.
-
-### ✨ RPG-Structured PRDs
-
-PRDs use a special structure that enables automatic dependency tracking:
-
-```markdown
-### Capability: User Authentication
-
-#### Feature: Magic Link Generation
-- **Description:** Generate secure magic links
-- **Depends on:** `User Model`
-- **Phase:** 1
-- **Acceptance Criteria:**
-  - [ ] Criterion 1
-  - [ ] Criterion 2
-```
-
-The task parser automatically:
-- Extracts all features as tasks
-- Maps all dependencies
-- Performs topological sort
-- Generates executable `TASKS.md`
-
-### ✨ 3-Level Quality Gates
-
-- **Level 1 (Automated)**: Lint, test, security scan, performance - runs in CI/CD
-- **Level 2 (Integration)**: Cross-agent validation, E2E tests, load testing - daily
-- **Level 3 (Business)**: Feature completeness, user satisfaction, stakeholder approval - weekly
-
-No task is complete until all 3 levels pass.
-
-### ✨ MCP & Byterover Integration
-
-- **MCP Server**: Coordinates context sharing between agents in real-time
-- **Byterover Memory**: Stores knowledge permanently across sessions
-- **Result**: Zero knowledge loss, perfect handoffs, continuous learning
-
----
-
-## 12. Success Metrics
-
-| Metric | Target | Status |
-|--------|--------|--------|
-| Agent Files | 7 synthesized | ✅ Complete |
-| Expertise | 7,772 lines preserved | ✅ 100% |
-| Technology Stack | 2025 latest | ✅ Current |
-| Task-Executor Protocol | All 7 agents | ✅ Integrated |
-| Quality Gates | 3 levels | ✅ Enforced |
-| Test Coverage | >90% backend, >85% frontend | ✅ Validated |
-| Security | OWASP 2025, NIST SSDF | ✅ Compliant |
-| Performance | <100ms p95, >95 Lighthouse | ✅ Validated |
-
----
-
-## 13. What Makes This System Unique
-
-### 🧠 Depth (From DeswalTech)
-- 7,772 lines of ultra-deep domain expertise
-- Latest 2025 standards (Argon2id, React 19, K8s 1.29+)
-- Real code examples (50+ patterns)
-- Advanced techniques (multi-layer caching, JWT rotation, performance optimization)
-- Enterprise-grade security (OWASP 2025, Zero Trust)
-
-### 🎯 Discipline (From Nexus AI)
-- Task-executor protocol (one task at a time)
-- Subagent architecture (isolated contexts)
-- RPG-structured PRDs (dependency tracking)
-- Automatic task parsing (topological sort)
-- Clear delegation and handoffs
-
-### 🔄 Integration (The Perfection Merge)
-- MCP server coordination
-- Byterover memory persistence
-- 3-level quality gates
-- PBVS lifecycle (Plan → Build → Validate → Scale)
-- Comprehensive Definition of Done checklists
-
-**Result**: THE MOST ADVANCED AI agent system in existence. 🚀
-
----
-
-## 14. Documentation
-
-### Primary Documentation:
-- 📖 **`Nexus Ai/nexus-ai-team/README.md`** - Installation and usage guide (START HERE)
-- 📄 **`Nexus Ai/PERFECTION_MERGE_REPORT.md`** - Complete merge documentation (11,000+ words)
-- 📋 **`Nexus Ai/AGENTS.md`** - Agent overview and capabilities
-
-### Supporting Documentation:
-- 📝 **`CHANGELOG.md`** - Version history
-- 🤝 **`CONTRIBUTING.md`** - How to contribute
-- 💿 **`INSTALLATION.md`** - Detailed installation guide
-- 📦 **`PUBLISHING.md`** - Publishing guide
-- 🔧 **`MCP_SETUP_GUIDE.md`** - MCP server setup
-
-### Reference Documentation:
-- 📁 **`_legacy_knowledge_archive/`** - Original DeswalTech agents (7,772 lines) - reference only
-
----
-
-## 15. Example Projects
-
-### Simple (1 day):
-- URL Shortener
-- Task Manager
-- Contact Form with Email
-- Blog with CMS
-
-### Medium (3-7 days):
-- SaaS MVP with Auth + Stripe
-- Social Media App with Real-time
-- E-commerce Platform
-- Project Management Tool
-
-### Complex (2-4 weeks):
-- Multi-tenant SaaS Platform
-- Mobile App (iOS + Android)
-- Microservices Architecture
-- Enterprise System with Compliance
-
-All delivered with:
-- ✅ >90% test coverage
-- ✅ OWASP 2025 compliant
-- ✅ <100ms API p95
-- ✅ >95 Lighthouse score
-- ✅ Production deployment
-- ✅ Monitoring & alerting
-
----
-
-## 16. Contributing
-
-We welcome contributions! Please see `CONTRIBUTING.md` for:
-- Code of conduct
-- Development setup
-- Pull request process
-- Testing requirements
-- Documentation standards
-
----
-
-## 17. License
-
-MIT License - See `LICENSE` file for details.
-
----
-
-## 18. Support & Community
-
-- **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
-- **Documentation**: See `Nexus Ai/nexus-ai-team/README.md`
-- **Merge Report**: See `Nexus Ai/PERFECTION_MERGE_REPORT.md`
-
----
-
-## 19. Acknowledgments
-
-This system synthesizes best practices from:
-- **DeswalTech**: Ultra-consolidated expertise and 2025 standards
-- **Nexus AI Team**: Built on `snarktank`, `eyaltoledano`, and `wshobson-agents`
-- **Claude Code**: Official Subagent and Agent Skills architecture
-- **Open Source Community**: Countless frameworks, tools, and best practices
-
-Special thanks to all contributors and the AI research community.
-
----
-
-## 20. Version History
-
-### v4.0 (Nexus) - October 28, 2025
-- ✅ **Perfection Merge**: Combined DeswalTech + Nexus AI Team
-- ✅ 7 agents synthesized with depth + discipline
-- ✅ 2025 technology stacks (Argon2id, React 19, K8s 1.29+)
-- ✅ Task-executor protocol integrated
-- ✅ 3-level quality gates enforced
-- ✅ MCP + Byterover integration
-- ✅ Legacy knowledge archived
-
-### v3.0 (Previous) - Pre-merge
-- DeswalTech system with 9 enhanced agents (7,772 lines)
-- PBVS lifecycle
-- Quality gates framework
-
----
-
-## 🎯 Get Started Now!
-
-```bash
-# 1. Install the plugin
-cd "Nexus Ai/local-marketplace"
-/plugin marketplace add /path/to/local-marketplace
-/plugin install nexus-ai-team@local-nexus-marketplace
-
-# 2. Start building
-/agent supervisor
-
-Build [YOUR PROJECT]!
-```
-
----
-
-**🚀 THE WORLD'S MOST ADVANCED AI AGENT TEAM IS READY!**  
-**📁 CLEAN, ORGANIZED, AND PRODUCTION-READY!**  
-**✨ GO BUILD THE FUTURE!**
+This project is licensed under the MIT License. See the `LICENSE` file for details.

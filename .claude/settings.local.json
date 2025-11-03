@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.langchain.com)",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.crewai.com)",
+      "WebFetch(domain:www.lindy.ai)",
+      "WebFetch(domain:www.convex.dev)",
+      "WebFetch(domain:www.langfuse.com)",
+      "WebFetch(domain:www.restack.io)",
+      "WebFetch(domain:www.temporal.io)",
+      "WebFetch(domain:fly.io)",
+      "WebFetch(domain:www.axiom.co)",
+      "WebFetch(domain:supabase.com)",
+      "WebFetch(domain:www.inngest.com)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx tsx:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

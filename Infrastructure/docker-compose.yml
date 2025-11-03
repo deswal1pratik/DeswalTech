@@ -130,6 +130,57 @@ services:
     depends_on:
       - postgres
 
+  # ==========================================================================
+  # Temporal Server (Durable Workflow Execution)
+  # ==========================================================================
+  temporal:
+    image: temporalio/auto-setup:latest
+    container_name: deswaltech-temporal
+    restart: unless-stopped
+    environment:
+      - DB=postgresql
+      - DB_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PWD=postgres
+      - POSTGRES_SEEDS=postgres
+      - DYNAMIC_CONFIG_FILE_PATH=config/dynamicconfig/development-sql.yaml
+    ports:
+      - "7233:7233"    # gRPC endpoint
+      - "7234:7234"    # Temporal server metrics
+    networks:
+      - deswaltech-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "tctl", "--address", "temporal:7233", "cluster", "health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # ==========================================================================
+  # Temporal Web UI (Workflow Visualization & Management)
+  # ==========================================================================
+  temporal-ui:
+    image: temporalio/ui:latest
+    container_name: deswaltech-temporal-ui
+    restart: unless-stopped
+    environment:
+      - TEMPORAL_ADDRESS=temporal:7233
+      - TEMPORAL_CORS_ORIGINS=http://localhost:3000
+    ports:
+      - "8080:8080"
+    networks:
+      - deswaltech-network
+    depends_on:
+      - temporal
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 # ============================================================================
 # NETWORKS
 # ============================================================================

@@ -1,11 +1,212 @@
 {
   "name": "nexus-ai-team",
-  "version": "1.0.0",
-  "description": "An advanced, orchestrated team of AI subagents and skills for complex, synchronous software development.",
+  "version": "4.1.0",
+  "description": "7 Expert AI Agents for enterprise-grade full-stack development with type-safe orchestration and durable execution",
   "author": {
-    "name": "Pratik Deswal"
+    "name": "Pratik Deswal",
+    "email": "pratik@deswal.tech"
   },
-  "repository": "[https://github.com/your-repo/nexus-ai-team](https://github.com/your-repo/nexus-ai-team)",
-  "license": "Apache-2.0",
-  "keywords": ["agents", "workflow", "tasks", "supervisor", "tdd", "development", "subagents"]
+  "repository": "local",
+  "license": "Private",
+  "keywords": [
+    "agents",
+    "workflow",
+    "pbvs",
+    "supervisor",
+    "type-safety",
+    "temporal",
+    "durable-execution",
+    "enterprise",
+    "full-stack"
+  ],
+
+  "agents": [
+    {
+      "name": "supervisor",
+      "path": "agents/supervisor.md",
+      "description": "Project orchestrator - ALWAYS start here. Handles strategic planning, task delegation, and risk management.",
+      "capabilities": [
+        "Project orchestration",
+        "Strategic planning with Extended Thinking",
+        "Task delegation to specialists",
+        "Risk management and safety protocols",
+        "Type-safe agent coordination",
+        "PBVS workflow management"
+      ],
+      "priority": 1
+    },
+    {
+      "name": "architect",
+      "path": "agents/architect.md",
+      "description": "System design expert - Database schemas, API contracts, architecture diagrams.",
+      "capabilities": [
+        "Database schema design (PostgreSQL, MongoDB, Redis)",
+        "API contract design (REST, GraphQL, gRPC)",
+        "System architecture diagrams",
+        "Scalability planning",
+        "Technology stack selection"
+      ],
+      "priority": 2
+    },
+    {
+      "name": "backend",
+      "path": "agents/backend.md",
+      "description": "Backend development expert - APIs, databases, authentication, business logic.",
+      "capabilities": [
+        "API development (Fastify, NestJS, Express)",
+        "Database implementation with migrations",
+        "Authentication systems (JWT, OAuth2)",
+        "Business logic implementation",
+        "Performance optimization (<50ms p95)"
+      ],
+      "priority": 3
+    },
+    {
+      "name": "frontend",
+      "path": "agents/frontend.md",
+      "description": "Frontend development expert - React/Next.js, UI components, responsive design.",
+      "capabilities": [
+        "React 19+ with Server Components",
+        "Next.js 15+ App Router",
+        "TailwindCSS 4+ + shadcn/ui",
+        "Responsive design (mobile-first)",
+        "Accessibility (WCAG 2.1 AA)"
+      ],
+      "priority": 4
+    },
+    {
+      "name": "qa-tester",
+      "path": "agents/qa-tester.md",
+      "description": "Quality assurance expert - Unit, integration, E2E testing, performance testing.",
+      "capabilities": [
+        "Unit testing (Jest, Vitest)",
+        "Integration testing",
+        "E2E testing (Playwright, Cypress)",
+        "Performance testing (k6)",
+        "90%+ test coverage"
+      ],
+      "priority": 5
+    },
+    {
+      "name": "devops",
+      "path": "agents/devops.md",
+      "description": "DevOps expert - Docker, Kubernetes, CI/CD, deployment, monitoring.",
+      "capabilities": [
+        "CI/CD pipelines (GitHub Actions)",
+        "Docker containerization",
+        "Kubernetes orchestration",
+        "Monitoring (Prometheus, Grafana)",
+        "Blue-green deployments"
+      ],
+      "priority": 6
+    },
+    {
+      "name": "security",
+      "path": "agents/security.md",
+      "description": "Security expert - OWASP compliance, vulnerability scanning, security audits.",
+      "capabilities": [
+        "OWASP Top 10 2025 compliance",
+        "Security audits (Semgrep, Trivy)",
+        "Authentication security (Argon2id)",
+        "Vulnerability remediation",
+        "Security best practices"
+      ],
+      "priority": 7
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "delegator",
+      "path": "skills/core/delegator.md",
+      "description": "Core skill for task delegation between agents",
+      "scope": "core"
+    },
+    {
+      "name": "prd-creator",
+      "path": "skills/workflow/prd-creator.md",
+      "description": "Create RPG-structured Product Requirements Documents via Socratic discovery",
+      "scope": "workflow"
+    },
+    {
+      "name": "task-parser",
+      "path": "skills/workflow/task-parser.md",
+      "description": "Parse PRD into dependency-aware TASKS.md (topologically sorted)",
+      "scope": "workflow"
+    },
+    {
+      "name": "task-executor",
+      "path": "skills/workflow/task-executor.md",
+      "description": "Execute tasks with wait-for-yes protocol and type-safe outputs",
+      "scope": "workflow"
+    }
+  ],
+
+  "mcpServers": [],
+  "hooks": [],
+
+  "features": {
+    "typeSafety": {
+      "enabled": true,
+      "description": "All agent outputs validated against Zod schemas with automatic retries",
+      "schemas": ["TaskOutputSchema", "PRDSchema"],
+      "version": "4.1.0"
+    },
+    "durableExecution": {
+      "enabled": true,
+      "description": "Temporal workflows for multi-day projects with automatic state persistence",
+      "workflows": ["pbvsWorkflow"],
+      "version": "4.1.0"
+    },
+    "extendedThinking": {
+      "enabled": true,
+      "description": "Extended Thinking for complex decisions (Supervisor: 2048-4096 tokens)",
+      "agents": ["supervisor", "architect"]
+    },
+    "promptCaching": {
+      "enabled": true,
+      "description": "Prompt caching for 90% token savings on agent identity and guidelines",
+      "duration": "1 hour"
+    },
+    "agentProtocol": {
+      "enabled": true,
+      "description": "Agent Protocol REST endpoints (/task, /step) for standardized communication",
+      "endpoints": ["/task", "/step"]
+    },
+    "safetyLayers": {
+      "enabled": true,
+      "description": "Comprehensive safety protocols: approval gates, rollback mechanisms, error documentation",
+      "levels": ["high-risk-identification", "approval-gates", "rollback", "error-docs"]
+    }
+  },
+
+  "configuration": {
+    "workflow": "PBVS",
+    "workflowDescription": "Plan → Build → Validate → Scale",
+    "startAgent": "supervisor",
+    "waitForYesProtocol": true,
+    "qualityStandards": {
+      "testCoverage": 90,
+      "performanceTargets": ["<100ms API p95", "<2.5s LCP"],
+      "securityStandards": ["OWASP Top 10 2025", "NIST SSDF"]
+    }
+  },
+
+  "requirements": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0",
+    "docker": ">=25.0.0",
+    "infrastructure": [
+      "PostgreSQL 16+",
+      "Redis 7+",
+      "Temporal (optional, for durable execution)"
+    ]
+  },
+
+  "documentation": {
+    "readme": "README.md",
+    "integrationGuide": "../INTEGRATION_GUIDE.md",
+    "sessionHandoff": "../../../SESSION_HANDOFF.md",
+    "claudeInstructions": "../../../CLAUDE.md"
+  }
 }

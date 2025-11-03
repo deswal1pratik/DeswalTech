@@ -265,6 +265,9 @@ The agents can leverage over 20 external tools and services. To use them, simply
 | **Supabase** | Database | PostgreSQL database, auth, and real-time data |
 | **Semgrep** | Code Quality | Static code analysis for bugs and vulnerabilities |
 | **Linear** | Project Mgmt | Managing tasks and tracking sprints |
+| **Resend** | Communication | Transactional email delivery |
+| **Twilio** | Communication | SMS, voice, and WhatsApp messaging |
+| **AWS** | Cloud Services | Access to AWS services (S3, Lambda, EC2, etc.) |
 
 *Note: Some services require API keys to be set in the `mcp.json` file.*
 
@@ -300,6 +303,149 @@ DeswalTech/
 │
 └── 📄 .gitignore                         (Git ignore file)
 ```
+
+---
+
+## 12. Future Enhancements & Recommendations
+
+### 🔍 Langfuse: Production Observability for AI Agents
+
+**Why Add Langfuse:**
+When you transition to API-based Claude usage, implementing comprehensive observability becomes critical for production systems. Langfuse provides enterprise-grade monitoring specifically designed for AI agent workflows.
+
+**Key Benefits:**
+
+1. **Complete Trace Visibility**
+   - End-to-end tracing of multi-agent workflows using OpenTelemetry standards
+   - Inspect every agent decision, tool call, and handoff
+   - Nested observation capture with automatic latency tracking
+   - Build evaluation datasets directly from production traces
+
+2. **Cost & Performance Tracking**
+   - Automatic cost calculation per agent invocation
+   - Track token usage across the entire PBVS lifecycle (Plan → Build → Validate → Scale)
+   - Real-time dashboards showing cost per project, per agent, per phase
+   - Budget alerts and optimization recommendations
+
+3. **Evaluation Framework**
+   - Human annotation capabilities for agent output quality
+   - Dataset management for continuous improvement
+   - A/B testing different agent prompts and configurations
+   - Systematic performance assessment across projects
+
+4. **Production Debugging**
+   - Identify failure patterns across agent workflows
+   - Root cause analysis for task failures
+   - Performance bottleneck identification
+   - Integration with existing logging infrastructure
+
+**Implementation Pattern:**
+```typescript
+import { observeOpenAI } from 'langfuse';
+
+// Decor ator-based instrumentation
+@observe()
+async function delegateToAgent(agentName: string, task: Task) {
+  // Automatically traced with nested calls
+  const result = await agents[agentName].execute(task);
+  return result;
+}
+```
+
+**When to Implement:**
+- Moving from subscription to API-based Claude usage
+- Building 3+ production projects simultaneously
+- Need for cost optimization and budget management
+- Require audit trails for enterprise compliance
+
+**Integration Effort:** 2-3 days
+**Cost:** Self-hosted (free) or Cloud ($0-$299/month based on volume)
+**Documentation:** https://langfuse.com
+
+---
+
+### 🎨 Visual Agent Studio: Real-Time Workflow Visualization
+
+**Why Add Visual Agent Studio:**
+Debugging and optimizing multi-agent systems becomes exponentially complex as project scope increases. Visual Agent Studio provides real-time visibility into agent state, decisions, and collaboration patterns.
+
+**Key Benefits:**
+
+1. **Live Execution Visualization**
+   - Real-time state diagram showing active agents
+   - Visualize handoffs between Supervisor and specialist agents
+   - Track progress through PBVS phases with visual indicators
+   - See which tasks are in progress, blocked, or completed
+
+2. **State Inspection & Time-Travel Debugging**
+   - Inspect agent memory and context at any point
+   - Replay past executions step-by-step
+   - Identify where workflows deviated from expected behavior
+   - Rollback to previous states for testing alternative paths
+
+3. **Performance Analytics**
+   - Identify bottlenecks in agent coordination
+   - Visualize token usage per agent over time
+   - Compare execution times across different workflow paths
+   - Optimize agent delegation strategies based on data
+
+4. **Development Acceleration**
+   - Understand complex agent interactions without log diving
+   - Quickly prototype new agent workflows
+   - Test skill modifications with immediate visual feedback
+   - Onboard new team members faster with visual documentation
+
+**Recommended Solutions:**
+
+**Option A: LangGraph Studio (Best for LangGraph Integration)**
+- Native support for multi-agent state machines
+- Built-in time-travel debugging
+- Visual workflow editor
+- Integration with LangSmith for observability
+- Free for development, paid for team collaboration
+
+**Option B: Custom Dashboard with React Flow**
+- Full control over visualization
+- Integrate with existing DeswalTech architecture
+- Real-time WebSocket updates from agents
+- Custom metrics and KPIs
+- Open source, self-hosted
+
+**Implementation Pattern:**
+```typescript
+// Broadcast agent state changes to studio
+eventBus.emit('agent:state:change', {
+  agentId: 'supervisor',
+  phase: 'BUILD',
+  currentTask: 'TASK-023',
+  status: 'delegating',
+  targetAgent: 'backend',
+  timestamp: Date.now()
+});
+```
+
+**When to Implement:**
+- Managing 5+ agents in complex workflows
+- Debugging difficult-to-reproduce agent behaviors
+- Optimizing agent coordination for performance
+- Training or collaborating with team members
+
+**Integration Effort:** 1-2 weeks (custom), 2-3 days (LangGraph Studio)
+**Cost:** Free (custom/LangGraph Studio dev) or $39-199/month (LangGraph Studio team)
+**Documentation:** https://langchain.com/langgraph-studio (LangGraph) or https://reactflow.dev (custom)
+
+---
+
+### 📊 Implementation Priority
+
+**Immediate Value (Implement when moving to production):**
+- Langfuse observability (critical for API cost management)
+
+**High Value (Implement after 2-3 successful projects):**
+- Visual Agent Studio (accelerates debugging and optimization)
+
+**Combined Impact:**
+Implementing both provides complete visibility into your AI development platform—Langfuse for production monitoring and cost management, Visual Agent Studio for development acceleration and debugging. Together, they transform DeswalTech from a powerful tool into an enterprise-grade AI development platform with full observability and control.
 
 ---
 

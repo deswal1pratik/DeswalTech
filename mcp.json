@@ -117,6 +117,30 @@
       "env": {
         "STRIPE_SECRET_KEY": "YOUR_STRIPE_SECRET_KEY_HERE"
       }
+    },
+    "resend": {
+      "command": "npx",
+      "args": ["-y", "@resend/mcp"],
+      "env": {
+        "RESEND_API_KEY": "YOUR_RESEND_API_KEY_HERE"
+      }
+    },
+    "twilio": {
+      "command": "npx",
+      "args": ["-y", "@twilio/mcp"],
+      "env": {
+        "TWILIO_ACCOUNT_SID": "YOUR_TWILIO_ACCOUNT_SID_HERE",
+        "TWILIO_AUTH_TOKEN": "YOUR_TWILIO_AUTH_TOKEN_HERE"
+      }
+    },
+    "aws": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-aws"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "YOUR_AWS_ACCESS_KEY_ID_HERE",
+        "AWS_SECRET_ACCESS_KEY": "YOUR_AWS_SECRET_ACCESS_KEY_HERE",
+        "AWS_REGION": "us-east-1"
+      }
     }
   }
 }

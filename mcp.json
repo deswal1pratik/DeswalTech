@@ -105,11 +105,7 @@
       }
     },
     "pieces": {
-      "command": "npx",
-      "args": ["-y", "@pieces-app/mcp"],
-      "env": {
-        "PIECES_API_KEY": "YOUR_PIECES_API_KEY_HERE"
-      }
+      "url": "http://localhost:39300/model_context_protocol/2024-11-05/sse"
     },
     "stripe": {
       "command": "npx",
